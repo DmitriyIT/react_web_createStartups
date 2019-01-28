@@ -1,0 +1,7 @@
+
+.FormInput__inputName_valid_yes {
+	color: green;
+}
+.FormInput__inputName_valid_no {
+	color: red;
+}

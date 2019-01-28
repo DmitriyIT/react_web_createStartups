@@ -1,0 +1,16 @@
+.StartupCard {
+	background-color: grey;
+	width: 300px;
+	height: 150px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+.StartupCard_active {
+	background-color: green;
+}
+.StartupCard__titel {
+	
+}
+.StartupCard__text {
+	
+}

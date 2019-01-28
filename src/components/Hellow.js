@@ -1,16 +1,39 @@
 import React, {Component} from 'react';
-import S_ph from './Say_phrase.js';
-
-function clickCons() {
-	console.log('click! year! ;))');
-}
+import SearchLine from './SearchLine';
+import List_startups from './List_startups';
+import FormInput from './FormInput';
 
 class MakeHi extends Component {
+	constructor(props) {
+		super(props);
+		this.startups = [
+			{titel: "first", text: 'awdawdawdawd da text', id: 1},
+			{titel: "sec", text: 'awdawdawdawd da text', id: 2},
+			{titel: "3", text: 'awdawdawdawd da text', id: 3}
+		];
+		
+		this.funcFilter = this.funcFilter.bind(this);
+		this.state = {
+			filterStartups: this.startups
+		}
+	}
+
+	funcFilter(text) {
+		let str = text.toLowerCase();
+		let arrFilter = this.startups.filter(function(item) {
+			return item.titel.toLowerCase().indexOf(str) !== -1;
+		});
+		this.setState({
+			filterStartups: arrFilter
+		})
+	}
+
 	render() {
 		return (
 			<div>
-				<S_ph str="HEllow" />
-				<button onClick={clickCons} />
+				<FormInput name="" />
+				<SearchLine funcFilter={this.funcFilter} />
+				<List_startups arr={this.state.filterStartups} />
 			</div>
 		);
 	};
