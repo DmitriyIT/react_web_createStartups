@@ -1,0 +1,12 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+p {
+	margin: 0;
+}
+.Container {
+	width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+}

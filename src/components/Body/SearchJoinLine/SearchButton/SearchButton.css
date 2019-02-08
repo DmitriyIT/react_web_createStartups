@@ -1,0 +1,14 @@
+.SearchButton {
+	width: 85px;
+	height: 30px;
+	padding-left: 11px;
+	background: linear-gradient(139.09deg, #FFE073 45.91%, #66B489 221.28%);
+	cursor: pointer;
+
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 30px;
+	font-size: 16px;
+	color: #254E5B;
+}

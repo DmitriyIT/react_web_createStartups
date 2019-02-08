@@ -1,0 +1,41 @@
+
+.Header {
+	height: 50px;
+	background-color: #FFE073;
+	position: relative;
+}
+.Header .Container {
+	position: relative;
+	height: 100%;
+}
+
+.Header__title {
+	display: inline-block;
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 50px;
+	font-size: 24px;
+	color: #254E5B;
+}
+.Header__button_exit {
+	position: relative;
+	width: 28px;
+	height: 31px;
+	top: 50%;
+	float: right;
+	transform: translateY(-50%);
+	background-color: #CAD79F;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.Header__button_exit:hover {
+	background-color: #6AD0C8;
+}
+.Header__button_exit img {
+	width: 24px;
+	height: 26px;
+	margin-top: 2px;
+	margin-left: 2px;
+}

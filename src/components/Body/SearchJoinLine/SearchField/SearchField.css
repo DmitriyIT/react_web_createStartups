@@ -1,0 +1,40 @@
+.SearchField {
+	position: relative;
+	width: 431px;
+	height: 30px;
+	background-color: #FFE073;
+}
+.SearchField__input {
+	position: relative;
+	width: 96%;
+	height: 80%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: none;
+	padding: 0;
+	padding-left: 10px;
+	background-color: #fff;
+	text-decoration: none;
+}
+.SearchField__input:focus, .SearchField__input:hover {
+	outline: none;
+	background-color: #F3F3F3;
+}
+
+.SearchField__div_white1 {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 5px;
+	height: 11px;
+	background-color: #fff;
+}
+.SearchField__div_white2 {
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	width: 5px;
+	height: 11px;
+	background-color: #fff;
+}
