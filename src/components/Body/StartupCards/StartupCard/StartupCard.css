@@ -1,8 +1,21 @@
+.Startup__popup {
+	right: -105%;
+	top: -50%;
+	opacity: 0;
+	transition: opacity 0.1s ease;
+	z-index: 20;
+}
+.StartupCard__body:hover ~ .Startup__popup {
+	opacity: 1;
+}
+.StartupCard__title:hover ~ .Startup__popup {
+	opacity: 1;
+}
+
 .StartupCard {
 	position: relative;
 	display: inline-block;
 	width: 208px;
-	cursor: pointer;
 	box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.25);
 }
 .StartupCard__topLine {
@@ -48,6 +61,7 @@
 }
 .StartupCard__button {
 	position: absolute;
+	cursor: pointer;
 	height: 41px;
 	width: 91px;
 	right: -18px;

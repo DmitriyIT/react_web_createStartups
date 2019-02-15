@@ -1,0 +1,47 @@
+.Startup__popup {
+	position: absolute;
+}
+.popup__main-div {
+	position: relative;
+	min-height: 80px;
+	min-width: 200px;
+	padding: 12px 15px;
+	background-color: #DDF8F6;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	line-height: normal;
+	font-size: 14px;
+	color: #17323B;
+	z-index: 11;
+}
+.popup__back-div {
+	position: absolute;
+	left: -10px;
+	bottom: -7px;
+	width: 65px;
+	height: 48px;
+
+	background: #F8E08B;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+	z-index: 10;
+}
+
+
+.popup__author {
+	margin-bottom: 10px;
+}
+.popup__author p {
+	display: inline-block;
+	margin-right: 25px;
+}
+.popup__author img {
+	width: 30px;
+	height: 30px;
+}
+.popup__author-name {
+	display: inline-block;
+	vertical-align: top;	
+}
