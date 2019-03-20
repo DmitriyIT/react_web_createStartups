@@ -1,0 +1,14 @@
+.Body {
+	padding-top: 12px;
+
+	.SearchJoinLine {
+		position: relative;
+		display: inline-block;
+		margin-left: -30px;
+		z-index: 14;
+	}
+
+	.MenuIcons {
+		display: inline-block;
+	}
+}

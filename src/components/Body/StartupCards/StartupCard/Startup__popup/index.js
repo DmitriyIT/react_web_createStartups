@@ -1,5 +1,5 @@
 import React from 'react';
-import './Startup__popup.css';
+import './Startup__popup.scss';
 
 var Startup__popup = ({ author_img, author_name, need_people }) => {
 	return (

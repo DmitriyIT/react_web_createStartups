@@ -29,17 +29,16 @@
 	z-index: 10;
 }
 
-
 .popup__author {
 	margin-bottom: 10px;
-}
-.popup__author p {
-	display: inline-block;
-	margin-right: 25px;
-}
-.popup__author img {
-	width: 30px;
-	height: 30px;
+	p {
+		display: inline-block;
+		margin-right: 25px;
+	}
+	img {
+		width: 30px;
+		height: 30px;
+	}
 }
 .popup__author-name {
 	display: inline-block;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './Body.css';
+import './Body.scss';
 import MenuIcons from './MenuIcons';
 
 import FindStartup from './FindStartup';

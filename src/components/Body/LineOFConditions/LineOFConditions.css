@@ -2,4 +2,9 @@
 	display: block;
 	height: 10px;
 	background-color: #F3F3F3;
+	transition: height 1s;
+}
+
+.LineOFConditions_show_yes {
+	height: 100px;
 }

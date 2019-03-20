@@ -1,5 +1,5 @@
 import React from 'react';
-import './MenuIcons.css';
+import './MenuIcons.scss';
 import { Link } from 'react-router-dom';
 
 var MenuIcons = (props) => {

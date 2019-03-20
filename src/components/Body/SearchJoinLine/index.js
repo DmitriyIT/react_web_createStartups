@@ -5,12 +5,11 @@ import SearchGamburger from './SearchGamburger';
 import SearchButton from './SearchButton';
 
 class SearchJoinLine extends Component {
-	
 	render() {
 		return (
 			<div className="SearchJoinLine">
 				<SearchField />
-				<SearchGamburger />
+				<SearchGamburger gumburgerClick={this.props.gumburgerClick} />
 				<SearchButton />
 			</div>
 		);

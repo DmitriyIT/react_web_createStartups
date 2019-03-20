@@ -16,11 +16,12 @@
 	padding-left: 10px;
 	background-color: #fff;
 	text-decoration: none;
+	&:focus, &:hover {
+		outline: none;
+		background-color: #F3F3F3;
+	}
 }
-.SearchField__input:focus, .SearchField__input:hover {
-	outline: none;
-	background-color: #F3F3F3;
-}
+
 
 .SearchField__div_white1 {
 	position: absolute;

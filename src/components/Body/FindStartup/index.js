@@ -11,7 +11,8 @@ class FindStartup extends Component {
 		super(props);
 		this.state = {
 			startups: [],
-			str_search: ''
+			str_search: '',
+			show_LineOFConditions: false
 		}
 	}
 
@@ -28,11 +29,17 @@ class FindStartup extends Component {
 		});
 	}
 
+	gumburgerClick = (e) => {
+		this.setState((prevState, props) => (
+			{ show_LineOFConditions: !prevState.show_LineOFConditions }
+		));
+	}
+
 	render() {
 		return (
 			<Fragment>
-				<SearchJoinLine />
-				<LineOFConditions />
+				<SearchJoinLine gumburgerClick={this.gumburgerClick} />
+				<LineOFConditions show={this.state.show_LineOFConditions} />
 				<StartupCards startups={this.state.startups} />
 			</Fragment>
 		);

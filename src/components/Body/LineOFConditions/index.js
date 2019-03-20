@@ -3,8 +3,9 @@ import './LineOFConditions.css';
 
 
 var LineOFConditions = (props) => {
+	var LineOFConditions_show = props.show ? 'LineOFConditions_show_yes' : '';
 	return (
-		<div className="LineOFConditions"></div>
+		<div className={"LineOFConditions " + LineOFConditions_show}></div>
 	);
 };
 
