@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import './FindStartup.css';
 
-import SearchJoinLine from '../SearchJoinLine';
-import LineOFConditions from '../LineOFConditions';
-import StartupCards from '../StartupCards';
+import SearchJoinLine from './SearchJoinLine';
+import LineOFConditions from './LineOFConditions';
+import StartupCards from './StartupCards';
 
 
 class FindStartup extends Component {

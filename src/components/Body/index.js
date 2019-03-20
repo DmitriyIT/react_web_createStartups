@@ -4,7 +4,7 @@ import './Body.scss';
 import MenuIcons from './MenuIcons';
 
 import FindStartup from './FindStartup';
-var DD2 = () => ( <div> d2 </div>);
+import MyStartup from './MyStartup';
 
 var Body = (props) => {
 	return (
@@ -14,7 +14,7 @@ var Body = (props) => {
 					<MenuIcons />
  					<Switch>
  						<Route exact path="/" component={FindStartup} />
- 						<Route path="/d2" component={DD2} />
+ 						<Route path="/d2" component={MyStartup} />
  					</Switch>
 				</div>
 			</div>

@@ -1,0 +1,59 @@
+.InfoCard {
+	width: 521px;
+	overflow: hidden;
+	border-radius: 10px 10px 5px 5px;
+	box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
+
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 15px;
+
+	color: #345761;
+	
+	.InfoCard__title {
+		min-height: 50px;
+		padding-left: 20px;
+		width: 100%;
+		line-height: 50px;
+
+		color: #24505F;
+	}
+	.InfoCard__body {
+		padding: 22px;
+		font-size: 14px;
+		color: #345761;
+
+		.InfoCard__button {
+			cursor: pointer;
+			float: right;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			min-height: 44px;
+			padding-left: 15px;
+			padding-right: 15px;
+			line-height: 44px;
+			background: linear-gradient(160.87deg, #FFE486 145.71%, #009D90 431.65%);
+
+			color: #265D6E;
+		}
+	}
+	.InfoCard__text {
+		padding: 10px;
+		max-width: 90%;
+		background: #F3F3F3;
+		border-radius: 5px;
+	}
+}
+
+.InfoCard_color-grey {
+	.InfoCard__title {
+		background: linear-gradient(183.4deg, #FFFFFF -31.95%, #CDE3E1 172.31%);
+	}	
+}
+
+.InfoCard_color-yellow {
+	.InfoCard__title {
+		background: linear-gradient(165.66deg, #FFE99C 16.29%, #FFE486 115.92%, rgba(255, 164, 91, 0.8) 166.56%);
+	}	
+}
