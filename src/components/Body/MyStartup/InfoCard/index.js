@@ -7,11 +7,7 @@ import './InfoCard.scss';
  */
 var InfoCard = ({ color, title, fields, button, funcButton }) => {
 
-	var text_fields = fields.map((text) => {
-		return (
-			<div className="InfoCard__text" key={text.substring(0,5)}> {text} </div>
-		); 
-	});
+	var text_fields = fields.map((text) => (<div className="InfoCard__text" key={text.substring(0,5)}> {text} </div>));	
 	var button_true = (button) ? <div className="InfoCard__button"> {button} </div> : '';
 	var InfoCard_classes = "InfoCard" + " InfoCard_color-" + color;
 

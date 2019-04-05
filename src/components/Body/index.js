@@ -5,6 +5,7 @@ import MenuIcons from './MenuIcons';
 
 import FindStartup from './FindStartup';
 import MyStartup from './MyStartup';
+import RegAuth from './RegAuth';
 
 var Body = (props) => {
 	return (
@@ -14,6 +15,7 @@ var Body = (props) => {
 					<MenuIcons />
  					<Switch>
  						<Route exact path="/" component={FindStartup} />
+ 						<Route exact path="/RegAuth" component={RegAuth} />
  						<Route path="/d2" component={MyStartup} />
  					</Switch>
 				</div>

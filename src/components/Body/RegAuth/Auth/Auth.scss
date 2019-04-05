@@ -1,0 +1,46 @@
+.AuthReg {
+	width: 430px;
+	border-radius: 10px 10px 5px 5px;
+	overflow: hidden;
+	box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
+
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	padding-left: 28px;
+	padding-bottom: 28px;
+
+	.AuthReg__title {
+		height: 55px;
+		margin-bottom: 22px;
+		background: linear-gradient(162.61deg, #FFE99C 16.29%, #FFE486 115.92%, rgba(255, 164, 91, 0.8) 166.56%);
+		font-size: 17px;
+		line-height: 55px;
+		color: #24505F;
+	}
+	.AuthReg__field {
+		width: 70%;
+		height: 35px;
+		margin-bottom: 22px;
+		background: #F3F3F3;
+		border-radius: 5px;
+		font-size: 15px;
+		line-height: 35px;
+		color: #345761;
+	}
+	.AuthReg__swith {
+		display: inline-block;
+		font-size: 15px;
+		line-height: normal;
+		color: #3AA5C4;
+	}
+	.AuthReg__button {
+		display: inline-block;
+		width: 160px;
+		height: 50px;
+		background: linear-gradient(156.98deg, #FFE486 145.71%, #009D90 431.65%);
+		font-size: 16px;
+		line-height: 47px;
+		color: #265D6E;
+	}
+}

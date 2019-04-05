@@ -11,7 +11,7 @@ var MenuIcons = (props) => {
 				</li>
 			</Link>
 
-			<Link to="/">
+			<Link to="/RegAuth">
 				<li className="MenuIcons__people">
 					<img src="../../img/icon/people.svg" />
 				</li>
