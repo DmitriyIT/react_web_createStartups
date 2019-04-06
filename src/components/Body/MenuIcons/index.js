@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 var MenuIcons = (props) => {
 	return (
 		<ul className="MenuIcons">
-			<Link to="/d2">
+			<Link to="/mystartup">
 				<li className="MenuIcons__startup">
 					<img src="../../img/icon/startup.svg" />
 				</li>
 			</Link>
 
-			<Link to="/RegAuth">
+			<Link to="/profile">
 				<li className="MenuIcons__people">
 					<img src="../../img/icon/people.svg" />
 				</li>

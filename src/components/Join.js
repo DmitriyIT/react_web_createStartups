@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './Join.css';
 
 import Header from './Header';
@@ -9,11 +10,13 @@ import Body from './Body';
 class Join extends Component {
 	render() {
 		return (
-			<Fragment>
-				<Header />
-				<Body />
-				<Footer />
-			</Fragment>
+			<BrowserRouter>
+				<Fragment>
+					<Header />
+					<Body />
+					<Footer />
+				</Fragment>
+			</BrowserRouter>
 		);
 	}
 }

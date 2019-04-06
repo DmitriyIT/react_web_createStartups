@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 var Header = () => {
@@ -7,7 +8,9 @@ var Header = () => {
 			<div className="Container">
 				<p className="Header__title"> На Старт </p>
 				<div className="Header__button_exit">
-					<img src="../../img/icon/exit.svg" />
+					<Link to="/RegAuth">
+						<img src="../../img/icon/exit.svg" />
+					</Link>
 				</div>
 			</div>
 		</div>

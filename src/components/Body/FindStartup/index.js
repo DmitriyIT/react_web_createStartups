@@ -17,7 +17,7 @@ class FindStartup extends Component {
 	}
 
 	componentDidMount() {
-		fetch('/startups') 
+		fetch('/startups')
 			.then(response => response.json())
 			.then(data => this.onDownload(data));
 	}
