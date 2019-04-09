@@ -13,32 +13,32 @@
 	position: relative;
 	display: inline-block;
 	width: 208px;
+	border-radius: 10px 10px 5px 5px;
 	box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.25);
 }
-.StartupCard__topLine {
-	height: 7px;
-	background-color: #84BEBA;
-}
 .StartupCard__title {
-	min-height: 33px;
+	min-height: 40px;
 	padding-left: 7px;
 	overflow-x: hidden;
-
+	border-radius: 10px 10px 0px 0px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+
 	font-family: Fira Sans;
 	font-style: italic;
 	font-weight: 500;
-	line-height: 33px;
 	font-size: 14px;
-	color: #111F24;
+	line-height: 40px;
+
+	color: #24505F;
+	background: linear-gradient(156.19deg, #FFE99C 16.29%, #FFE486 115.92%, rgba(255, 164, 91, 0.8) 166.56%);
 }
 .StartupCard__body {
 	padding-left: 7px;
 	padding-top: 9px;
 	padding-right: 30px;
 	padding-bottom: 20px;
-	background-color: #F3F3F3;
+	background-color: #FFF;
 	font-family: Fira Sans;
 	font-style: italic;
 	font-weight: 500;
@@ -48,7 +48,8 @@
 }
 .StartupCard__bottomLine {
 	height: 7px;
-	background-color: #009D90;
+	border-radius: 0px 0px 5px 5px;
+	background: linear-gradient(217.89deg, rgba(255, 224, 115, 0.7) 4.5%, rgba(0, 157, 144, 0.5) 91.99%);
 }
 
 .StartupCard__triangle {
@@ -78,5 +79,6 @@
 }
 .StartupCard__button:hover {
 	background: linear-gradient(145.33deg, rgba(255, 228, 133, 0.01) 14.26%, rgba(0, 157, 144, 0.01) 431.65%);
-	background-color: #FFE485;
+	/*background-color: #FFE485;*/
+	background: linear-gradient(145.33deg, #FFE486 145.71%, #009D90 431.65%);
 }
