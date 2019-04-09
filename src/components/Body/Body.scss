@@ -11,10 +11,13 @@
 	.MenuIcons {
 		display: inline-block;
 	}
-	.MyStartup {
+	.MyStartup, .CreateStartup {
 		position: relative;
 		z-index: 20;
 		margin-left: 91px;
 		margin-top: -20px;
+	}
+	.CreateStartup {
+		margin-top: -30px;	
 	}
 }

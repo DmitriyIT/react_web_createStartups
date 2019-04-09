@@ -5,6 +5,10 @@ body {
 p, ul {
 	margin: 0;
 }
+a:active, a:visited, a:focus {
+	text-decoration: none;
+	outline: none;
+}
 
 .Container {
 	width: 745px;

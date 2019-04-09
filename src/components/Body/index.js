@@ -6,6 +6,7 @@ import MenuIcons from './MenuIcons';
 import FindStartup from './FindStartup';
 import MyStartup from './MyStartup';
 import RegAuth from './RegAuth';
+import CreateStartup from './CreateStartup';
 
 function MainComp() {
 	return (
@@ -14,7 +15,8 @@ function MainComp() {
 			<Switch>
 				<Route exact path="/" component={FindStartup} />
 				<Route path="/profile" component={MyStartup} />
-				<Route path="/mystartup" component={MyStartup} />
+				<Route exact path="/mystartup" component={MyStartup} />
+				<Route path="/mystartup/create" component={CreateStartup} />
 			</Switch>
 		</Fragment>
 	);

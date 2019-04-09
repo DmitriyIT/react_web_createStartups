@@ -13,7 +13,30 @@ class MyStartup extends Component {
 		this.fields2 = [
 			"Вы можете состоять только в 1м стартапе (создав свой стартап - не сможете войти в другой, пока существует ваш)"
 		];
+		this.state = {
+			role: "no",//master||member||no
+			startup:{
+				messages:[],
+				members:[],
+				startup_requests:[] //if role == master
+			}
+		}
 	}
+
+	getRole = () => {
+		fetch("/mystartup")
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data.ans);
+				if (data) {
+					this.setState(data);
+				} else {
+					// this.setState({err: ''});
+				}
+			})
+			.catch(function(res){ console.log('catch' + res) });
+	}
+
 
 	render() {
 		return (

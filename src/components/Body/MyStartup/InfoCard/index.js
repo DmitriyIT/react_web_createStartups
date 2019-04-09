@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './InfoCard.scss';
 
 /**
@@ -8,7 +9,11 @@ import './InfoCard.scss';
 var InfoCard = ({ color, title, fields, button, funcButton }) => {
 
 	var text_fields = fields.map((text) => (<div className="InfoCard__text" key={text.substring(0,5)}> {text} </div>));	
-	var button_true = (button) ? <div className="InfoCard__button"> {button} </div> : '';
+	var button_true = (button) ?  
+		<Link to="/mystartup/create"> 
+			<div className="InfoCard__button"> {button} </div> 
+		</Link> 
+		: '';
 	var InfoCard_classes = "InfoCard" + " InfoCard_color-" + color;
 
 	return (
