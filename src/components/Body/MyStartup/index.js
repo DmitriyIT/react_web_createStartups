@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './MyStartup.scss';
 
 import InfoCard from './InfoCard';
+import StartupMain from './StartupMain';
 
 class MyStartup extends Component {
 	constructor(props) {
@@ -23,26 +24,31 @@ class MyStartup extends Component {
 		}
 	}
 
-	getRole = () => {
-		fetch("/mystartup")
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data.ans);
-				if (data) {
-					this.setState(data);
-				} else {
-					// this.setState({err: ''});
-				}
-			})
-			.catch(function(res){ console.log('catch' + res) });
+	componentDidMount() {
+		fetch('/mystartup')
+			.then(response => response.json())
+			.then(data => this.onDownload(data));
 	}
 
+	onDownload(data) {
+		// console.log(data);
+		// console.log(this.props.match);
+		if (data) {
+			this.setState(data);
+		} else {
+			// this.setState({err: ''});
+		}
+	}
 
 	render() {
+		var ShowComp = this.state.role == 'no' ? [
+				<InfoCard title="Инф сообщ." color="grey" fields={this.fields1} button={false} funcButton='' />,
+				<InfoCard title="Инф сообщ." color="yellow" fields={this.fields2} button='Перейти к созданию' funcButton='' />
+			]
+			: <StartupMain {...this.state} />;
 		return (
 			<div className="MyStartup">
-				<InfoCard title="Инф сообщ." color="grey" fields={this.fields1} button={false} funcButton='' />
-				<InfoCard title="Инф сообщ." color="yellow" fields={this.fields2} button='Перейти к созданию' funcButton='' />
+				{ShowComp}
 			</div>
 		);
 	}
