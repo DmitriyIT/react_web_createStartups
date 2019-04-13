@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 var MenuIcons = (props) => {
 	return (
 		<ul className="MenuIcons">
-			<Link to="/mystartup">
+			<Link to="/mystartup/main">
 				<li className="MenuIcons__startup">
 					<img src="../../img/icon/startup.svg" />
 				</li>

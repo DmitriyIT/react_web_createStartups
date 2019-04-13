@@ -1,0 +1,48 @@
+.Message {
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 14px;
+	
+	.Messege__icon {
+		display: inline-block;
+		vertical-align: top;
+		padding: 7px;
+
+		img {
+			width: 35px;
+			height: 35px;
+			border-radius: 15px;
+		}
+	}
+	.Messege__body {
+		display: inline-block;
+		vertical-align: top;
+		padding-top: 5px;
+	}
+	.Messege__body__name {
+		display: inline-block;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: normal;
+
+		color: #1C736B;
+	}
+	.Messege__body__time {
+		display: inline-block;
+		margin-left: 15px;
+		font-size: 12px;
+		color: #6E6E6E;
+	}
+	.Messege__body__line {
+		width: 170px;
+		height: 3px;
+		margin-top: 2px;
+		margin-bottom: 5px;
+		background: #C4C4C4;
+	}
+	.Messege__body__text {
+		margin-left: 3px;
+		color: #444444;
+	}	
+}

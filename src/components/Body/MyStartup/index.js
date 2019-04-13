@@ -16,7 +16,9 @@ class MyStartup extends Component {
 		];
 		this.state = {
 			role: "no",//master||member||no
-			startup:{
+			startup: {
+				title: 'name',
+				description: 'd',
 				messages:[],
 				members:[],
 				startup_requests:[] //if role == master

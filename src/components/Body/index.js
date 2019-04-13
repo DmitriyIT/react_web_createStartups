@@ -15,8 +15,9 @@ function MainComp() {
 			<Switch>
 				<Route exact path="/" component={FindStartup} />
 				<Route path="/profile" component={MyStartup} />
-				<Route exact path="/mystartup" component={MyStartup} />
+				<Route path="/mystartup/main" component={MyStartup} />
 				<Route path="/mystartup/create" component={CreateStartup} />
+				<Route path="/mystartup/change" component={CreateStartup} />
 			</Switch>
 		</Fragment>
 	);

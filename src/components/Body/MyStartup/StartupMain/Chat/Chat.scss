@@ -1,0 +1,55 @@
+.Chat {
+	height: 75%;
+	
+	.Chat__board_g {
+		border-radius: 5px;
+		background-color: #F3F3F3;
+		width: 95%;
+		height: 100%;
+		padding: 10px 4px 4px 2px;
+
+		.Chat__board_w {
+			width: 98%;
+			height: 98%;
+			border-radius: 5px;
+			background-color: #fff;
+			overflow-y: scroll;
+
+			.Message {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	form {
+		width: 95%;
+	}
+	.Chat__messageField {
+		display: inline-block;
+		margin-top: 7px;
+		padding: 2px 3px 2px 3px;
+		width: 87%;
+		border-radius: 5px;
+		background-color: #F3F3F3;
+
+		input {
+			height: 25px;
+			width: 99%;
+			padding-left: 5px;
+			border: none;
+			background-color: #fff;
+			font-size: 13px;
+			color: #444444;
+		}
+	}
+	.Chat__buttonSend {
+		cursor: pointer;
+		display: inline-block;
+		float: right;
+		height: 30px;
+		margin-top: 7px;
+		margin-right: -5px;
+		vertical-align: top;
+		border-radius: 5px;
+		background-color: #F3F3F3;
+	}	
+}

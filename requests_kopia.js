@@ -1,4 +1,22 @@
 
+// For chat
+
+//  url: /getMessages
+//  
+messages: [
+    {
+        author_icon_path: '',
+        author_name: 'Вася Васькин',
+        time: '',
+        text: 'что то в сообщении'
+    },
+    {
+        author_icon_path: '',
+        author_name: 'Вася Васькин',
+        time: '',
+        text: 'что то в сообщении'
+    },
+]
 
  
 

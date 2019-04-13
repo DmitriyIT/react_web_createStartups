@@ -13,17 +13,18 @@ class RegAuth extends Component {
 	}
 
 	goSwitch = () => {
-		this.setState((state, props) => ({auth_show: !state.auth_show }));
+		this.setState((state, props) => ({
+			auth_show: !state.auth_show 
+		}));
 	}
 
 	onChangeEmail = (e) => {
-		// console.log(this.refForm.current.email.value);
 		var email = e.target.value;
-		if (this.state.auth_show == false) {
-			this.checkEmail(email);
-		} else {
-			this.setState({err: ''});
-		}
+		
+		(this.state.auth_show == false) ? 
+			this.checkEmail(email)
+			: this.setState({err: ''});
+
 		this.setState({email: email});
 	}
 
@@ -37,31 +38,36 @@ class RegAuth extends Component {
 		    body: JSON.stringify({email: email})
 		})
 		.then((response) => response.json())
-		.then((data) => {
+		.then((data) => { 
+
+			// Response data
 			console.log(data.ans)
-			if (data.ans) {
-				this.setState({err: 'такой email уже используется'});
-			} else {
-				this.setState({err: ''});
-			}
+			data.ans ?
+				this.setState({err: 'такой email уже используется'})
+				: this.setState({err: ''});
 		})
-		.catch(function(res){ console.log('catch' + res) });
+		.catch(
+			// Error
+			res => console.log('catch' + res));
 	}
 
 	refForm = React.createRef();
 
 	submitForm = (e) => {
 		e.preventDefault();
-		var email = e.target.email.value;
-		var password = e.target.password.value;
+
+		var email     = e.target.email.value,
+			 password  = e.target.password.value;
 
 		if (this.state.auth_show) {
+			// Auth
 			// this.makeAuth('awdawd');
 		} else {
+
+			// Registration
 			var password2 = e.target.password2.value;
 			if (password === password2) {
 				// this.makeReg('awdawd');
-				console.log('awd')
 				this.setState({err: ''});
 				window.location.assign('/');
 			} else {
@@ -71,7 +77,14 @@ class RegAuth extends Component {
 	}
 
 	render() {
-		return <AuthReg submitForm={this.submitForm} switch2={this.goSwitch} onChangeEmail={this.onChangeEmail} isSwitch={this.state.auth_show} err={this.state.err} />
+		return (
+			<AuthReg 
+				submitForm={this.submitForm} 
+				switch2={this.goSwitch} 
+				onChangeEmail={this.onChangeEmail} 
+				isSwitch={this.state.auth_show} 
+				err={this.state.err} />
+		);
 	}
 }
 

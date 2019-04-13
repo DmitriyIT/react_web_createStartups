@@ -21,9 +21,11 @@ class CreateStartup extends Component {
 
 	submitForm = (event) => {
 		event.preventDefault();
-		var input_obj = {};
-		var flag = false;
+		
+		var input_obj  = {},
+			 flag       = false;
 
+		// Get obj of form values
 		this.fields.forEach( ({ name, text }) => {
 			if (!event.target[name].value && !flag) {
 				flag = text;
@@ -31,10 +33,13 @@ class CreateStartup extends Component {
 			input_obj[name] = event.target[name].value;
 		});
 
+		// Valid of empty lines
 		if (flag) {
 			var err = 'поле \"' + flag + '\" не заполнено';
 			this.setState({err: err});
 		} else {
+
+			// Create startup
 			this.setState({err: '', button_text: 'Создается'});
 			this.createStartup(input_obj);
 		}
@@ -50,15 +55,18 @@ class CreateStartup extends Component {
 		    body: JSON.stringify(data)
 		})
 		.then((response) => response.json())
-		.then((data) => { // Answer from serv actions
+		.then((data) => { 
+
+			// Answer from serv actions
 			if (data.code) { // happy path
 				this.setState({err: ''});
-				window.location.assign('/mystartup');
+				window.location.assign('/mystartup/main');
+
 			} else { // smth broke
 				this.setState({err: 'приносим извинения, произошла ошибка на сервере'});
 			}
 		})
-		.catch(function(res){ console.log('catch ' + res) });
+		.catch(res => console.log('catch ' + res));
 	}
 
 	render() {

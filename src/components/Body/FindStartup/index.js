@@ -5,7 +5,6 @@ import SearchJoinLine from './SearchJoinLine';
 import LineOFConditions from './LineOFConditions';
 import StartupCards from './StartupCards';
 
-
 class FindStartup extends Component {
 	constructor(props) {
 		super(props);
