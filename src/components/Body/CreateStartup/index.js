@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './CreateStartup.scss';
 
-import CreateStartup_xml from './CreateStartup_xml.js';
+// import CreateStartup_xml from './CreateStartup_xml.js';
+import BigBlank from '../BigBlank';
 
 class CreateStartup extends Component {
 	constructor(props) {
@@ -11,11 +12,11 @@ class CreateStartup extends Component {
 			button_text: 'Создать'
 		};
 		this.fields = [
-			{name: 'theme', text: "Тема стартапа"},
-			{name: 'description', text: "Описание подробное"},
-			{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)"},
-			{name: 'peopleNeeded', text: "Нужные люди"},
-			{name: 'contacts', text: "Ваши контакты (отображаются при подаче заявки в стартап: желающие смогут с вами связаться)"}
+			{name: 'theme', text: "Тема стартапа", value: ''}, 
+			{name: 'description', text: "Описание подробное", value: ''}, 
+			{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)", value: ''}, 
+			{name: 'peopleNeeded', text: "Нужные люди", value: ''}, 
+			{name: 'contacts', text: "Ваши контакты (отображаются при подаче заявки в стартап: желающие смогут с вами связаться)", value: ''}
 		];
 	}
 
@@ -38,7 +39,6 @@ class CreateStartup extends Component {
 			var err = 'поле \"' + flag + '\" не заполнено';
 			this.setState({err: err});
 		} else {
-
 			// Create startup
 			this.setState({err: '', button_text: 'Создается'});
 			this.createStartup(input_obj);
@@ -58,11 +58,11 @@ class CreateStartup extends Component {
 		.then((data) => { 
 
 			// Answer from serv actions
-			if (data.code) { // happy path
+			if (data.code) {
 				this.setState({err: ''});
 				window.location.assign('/mystartup/main');
 
-			} else { // smth broke
+			} else { // error
 				this.setState({err: 'приносим извинения, произошла ошибка на сервере'});
 			}
 		})
@@ -70,7 +70,19 @@ class CreateStartup extends Component {
 	}
 
 	render() {
-		return <CreateStartup_xml err={this.state.err} submitForm={this.submitForm} title="Создать стартап" fields_title={this.fields} button_text={this.state.button_text} />
+		return (
+			<BigBlank 
+				err={this.state.err} 
+				title="Создать стартап" 
+				fields_input={this.fields} 
+				button_left={{
+					link: "/mystartup/main",
+					text: "отмена"
+				}}
+				button_text={this.state.button_text}
+				submitForm={this.submitForm} 
+				textareaChange={this.textareaChange} />
+		);
 	}
 }
 

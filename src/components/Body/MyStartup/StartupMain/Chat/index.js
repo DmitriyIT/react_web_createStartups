@@ -19,7 +19,7 @@ class Chat extends Component {
 			.then(data => this.setState({messages: data}));
 	}
 	componentDidMount() {
-		this.interval = setInterval(() => this.getMsg(), 2500);
+		this.interval = setInterval(() => this.getMsg(), 5500);
 		this.getMsg();
 	}
 	componentWillUnmount() {

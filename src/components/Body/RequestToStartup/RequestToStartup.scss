@@ -1,0 +1,69 @@
+.CreateStartup {
+	width: 581px;
+	overflow: hidden;
+	border-radius: 10px 10px 5px 5px;
+	box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
+
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 15px;
+
+	color: #345761;
+	
+	.CreateStartup__title {
+		min-height: 50px;
+		padding-left: 20px;
+		width: 100%;
+		background: linear-gradient(165.66deg, #FFE99C 16.29%, #FFE486 115.92%, rgba(255, 164, 91, 0.8) 166.56%);
+		line-height: 50px;
+		color: #24505F;
+	}
+	.CreateStartup_err {
+		color: rgba(207, 88, 88, 1);
+		margin-left: 20px;
+		margin-top: 10px;
+		margin-bottom: -3px;
+	}
+	form {
+		padding: 22px;
+		font-size: 14px;
+		color: #345761;
+		max-height: 345px;
+		overflow-x: scroll;
+
+		.CreateStartup__field {
+			padding: 10px;
+			width: 90%;
+			max-width: 92%;
+			margin-bottom: 10px;
+			margin-top: 5px;
+			background: #F3F3F3;
+			border: none;
+			border-radius: 5px;
+
+	
+			font-family: Fira Sans;
+			font-style: italic;
+			font-weight: 500;
+			font-size: 14px;
+
+			color: #596467;
+		}
+	}
+	.CreateStartup__button {
+		cursor: pointer;
+		float: right;
+		margin: 10px 20px 20px 0;
+		min-height: 35px;
+		padding-left: 20px;
+		padding-right: 20px;
+		background: linear-gradient(160.87deg, #FFE486 145.71%, #009D90 431.65%);
+		border: none;
+
+		line-height: 40px;
+		font-weight: 500;
+		font-size: 15px;
+		color: #265D6E;
+	}
+}

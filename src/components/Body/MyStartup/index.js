@@ -29,17 +29,15 @@ class MyStartup extends Component {
 	componentDidMount() {
 		fetch('/mystartup')
 			.then(response => response.json())
-			.then(data => this.onDownload(data));
-	}
-
-	onDownload(data) {
-		// console.log(data);
-		// console.log(this.props.match);
-		if (data) {
-			this.setState(data);
-		} else {
-			// this.setState({err: ''});
-		}
+			.then(data => {
+				// console.log(data);
+				// console.log(this.props.match);
+				if (data) {
+					this.setState(data);
+				} else {
+					// this.setState({err: ''});
+				}
+			});
 	}
 
 	render() {

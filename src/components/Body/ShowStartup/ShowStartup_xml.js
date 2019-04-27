@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './CreateStartup.scss';
+import { Link } from 'react-router-dom';
+import './ShowStartup.scss';
 
-function CreateStartup_xml({ err, refForm, submitForm, title, fields_title, button_text }) {
-	var fields = fields_title.map(e => [
+function CreateStartup_xml({ err, refForm, submitForm, title, fields_input, button_text, textareaChange }) {
+	var fields = fields_input.map(e => [
 		<div className="CreateStartup__titleField">{e.text}</div>,
-		<textarea className="CreateStartup__field" name={e.name} />
+		<textarea className="CreateStartup__field" name={e.name} value={e.value} onChange={textareaChange} />
 	]);
 	return (
 		<div className="CreateStartup">
@@ -14,6 +15,9 @@ function CreateStartup_xml({ err, refForm, submitForm, title, fields_title, butt
 				{fields}
 			</form>
 			<input type="submit" form="createStartup" className="CreateStartup__button" value={button_text} />
+			<Link to="/">
+				<div className="CreateStartup__button"> Назад </div>
+			</Link>
 		</div>
 	)
 }

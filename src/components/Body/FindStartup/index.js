@@ -18,14 +18,11 @@ class FindStartup extends Component {
 	componentDidMount() {
 		fetch('/startups')
 			.then(response => response.json())
-			.then(data => this.onDownload(data));
-	}
-
-	onDownload(data) {
-		console.log(data);
-		this.setState({
-			startups: data
-		});
+			.then(data => {
+				this.setState({
+					startups: data
+				});
+			});
 	}
 
 	gumburgerClick = (e) => {
@@ -39,6 +36,7 @@ class FindStartup extends Component {
 			<Fragment>
 				<SearchJoinLine gumburgerClick={this.gumburgerClick} />
 				<LineOFConditions show={this.state.show_LineOFConditions} />
+				{this.state.awd}
 				<StartupCards startups={this.state.startups} />
 			</Fragment>
 		);

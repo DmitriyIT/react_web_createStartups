@@ -22,7 +22,9 @@ var StartupMain_xml = ({ title, description }) => {
 				<div className="MyStartupTop__switchButton">Заявки</div>
 			</Link>
 
-			<div className="MyStartupTop__rightButton">Редактировать</div>
+			<Link to='/mystartup/change'>
+				<div className="MyStartupTop__rightButton">Редактировать</div>
+			</Link>
 		</div>
 	);
 }

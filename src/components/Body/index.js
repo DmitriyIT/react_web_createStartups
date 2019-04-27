@@ -4,9 +4,12 @@ import './Body.scss';
 import MenuIcons from './MenuIcons';
 
 import FindStartup from './FindStartup';
+import ShowStartup from './ShowStartup';
+import RequestToStartup from './RequestToStartup';
 import MyStartup from './MyStartup';
 import RegAuth from './RegAuth';
 import CreateStartup from './CreateStartup';
+import ChangeStartup from './ChangeStartup';
 
 function MainComp() {
 	return (
@@ -14,10 +17,12 @@ function MainComp() {
 			<MenuIcons />
 			<Switch>
 				<Route exact path="/" component={FindStartup} />
+				<Route path="/ShowStartup/:id" component={ShowStartup} />
+				<Route path="/RequestToStartup/:id" component={RequestToStartup} />
 				<Route path="/profile" component={MyStartup} />
 				<Route path="/mystartup/main" component={MyStartup} />
 				<Route path="/mystartup/create" component={CreateStartup} />
-				<Route path="/mystartup/change" component={CreateStartup} />
+				<Route path="/mystartup/change" component={ChangeStartup} />
 			</Switch>
 		</Fragment>
 	);
