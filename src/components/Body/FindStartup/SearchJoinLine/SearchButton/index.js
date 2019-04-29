@@ -1,9 +1,9 @@
 import React from 'react';
 import './SearchButton.css';
 
-var SearchButton = (props) => {
+var SearchButton = () => {
 	return (
-		<div className="SearchButton"> Поиск </div>
+		<input type="submit" className="SearchButton" value="Поиск" form="formForSearch" />
 	);
 }
 

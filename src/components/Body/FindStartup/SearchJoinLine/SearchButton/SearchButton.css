@@ -1,7 +1,9 @@
 .SearchButton {
 	width: 85px;
 	height: 30px;
-	padding-left: 11px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: none;
 	background: linear-gradient(139.09deg, #FFE073 45.91%, #66B489 221.28%);
 	cursor: pointer;
 

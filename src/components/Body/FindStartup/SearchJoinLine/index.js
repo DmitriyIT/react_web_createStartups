@@ -5,10 +5,28 @@ import SearchGamburger from './SearchGamburger';
 import SearchButton from './SearchButton';
 
 class SearchJoinLine extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			search_str: ''
+		}
+	}
+
+	onSubmit = (e) => {
+		e.preventDefault();
+		this.props.findStartups(e.target.searchStr.value);
+	}
+	onChangeSearchStr = (e) => {
+		this.setState({search_str: e.target.value});
+	}
+
 	render() {
 		return (
 			<div className="SearchJoinLine">
-				<SearchField />
+				<SearchField 
+					onSubmit={this.onSubmit}
+					onChangeSearchStr={this.onChangeSearchStr} 
+					search_str={this.state.search_str} />
 				<SearchGamburger gumburgerClick={this.props.gumburgerClick} />
 				<SearchButton />
 			</div>
