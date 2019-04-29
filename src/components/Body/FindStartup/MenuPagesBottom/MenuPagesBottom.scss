@@ -1,0 +1,62 @@
+.MenuPagesBottom {
+	position: fixed;
+	bottom: 15px;
+	width: 423px;
+	height: 26px;
+	// padding-top: 10px;
+	padding-left: 15px;
+	background-image: url('/img/bottomLine.png');
+   background-size: 100%;
+   background-position: center;
+   background-repeat: no-repeat;	
+	
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+
+	color: #254E5B;
+	&:before {
+		content: '';
+		height: 17px;
+		display: inline-block;
+	}
+	div {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.MenuPagesBottom__bFirst {
+		cursor: pointer;
+		width: 47px;
+		height: 17px;
+		padding-left: 10px;
+		background-image: url('/img/bFirst.png');
+	   background-size: 100%;
+	   background-position: center;
+	   background-repeat: no-repeat;
+	}
+	.MenuPagesBottom__bPrev {
+		cursor: pointer;
+		width: 49px;
+		height: 17px;
+		background-image: url('/img/bPrev.png');
+	   background-size: 100%;
+	   background-position: center;
+	   background-repeat: no-repeat;
+	}
+	.MenuPagesBottom__showNumPage {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.MenuPagesBottom__bNext {
+		cursor: pointer;
+		width: 49px;
+		height: 17px;
+		background-image: url('/img/bNext.png');
+	   background-size: 100%;
+	   background-position: center;
+	   background-repeat: no-repeat;	
+	}
+}

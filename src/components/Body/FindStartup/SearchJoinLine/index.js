@@ -16,17 +16,17 @@ class SearchJoinLine extends Component {
 		e.preventDefault();
 		this.props.findStartups(e.target.searchStr.value);
 	}
-	onChangeSearchStr = (e) => {
-		this.setState({search_str: e.target.value});
-	}
+	// onChangeSearchStr = (e) => {
+	// 	this.setState({search_str: e.target.value});
+	// }
 
 	render() {
 		return (
 			<div className="SearchJoinLine">
 				<SearchField 
 					onSubmit={this.onSubmit}
-					onChangeSearchStr={this.onChangeSearchStr} 
-					search_str={this.state.search_str} />
+					onChangeSearchStr={this.props.onChangeSearchStr} 
+					search_str={this.props.search_str} />
 				<SearchGamburger gumburgerClick={this.props.gumburgerClick} />
 				<SearchButton />
 			</div>
