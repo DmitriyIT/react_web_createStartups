@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './ChangeStartup.scss';
 
-import ChangeStartup_xml from './ChangeStartup_xml.js';
 import BigBlank from '../BigBlank';
 
 class ChangeStartup extends Component {
@@ -45,13 +44,11 @@ class ChangeStartup extends Component {
 			if (elem.name == event.target.name) elem.value = event.target.value;
 			return elem;
 		});
-
 		this.setState({fields: new_fields});
 	}
 
 	submitForm = (event) => {
 		event.preventDefault();
-		
 		var start_fields = this.state.fields_startState,
 			input_obj     = {},
 			flag          = false,
@@ -72,14 +69,11 @@ class ChangeStartup extends Component {
 			});
 		}
 
-		if (!flag_of_diff) console.log('awdawd');
-
 		// Valid of empty lines
 		if (flag) {
 			var err = 'поле \"' + flag + '\" не заполнено';
 			this.setState({err: err});
 		} else if (flag_of_diff) {
-
 			// Move changes startup
 			this.setState({err: '', button_text: 'Создается'});
 			this.ChangeStartup(input_obj);
@@ -97,12 +91,10 @@ class ChangeStartup extends Component {
 		})
 		.then((response) => response.json())
 		.then((data) => { 
-
 			// Answer from serv actions
 			if (data.code) { // happy path
 				this.setState({err: ''});
 				window.location.assign('/mystartup/main');
-
 			} else { // smth broke
 				this.setState({err: 'приносим извинения, произошла ошибка на сервере'});
 			}

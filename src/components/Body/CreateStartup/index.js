@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './CreateStartup.scss';
 
-// import CreateStartup_xml from './CreateStartup_xml.js';
 import BigBlank from '../BigBlank';
 
 class CreateStartup extends Component {
@@ -22,9 +21,8 @@ class CreateStartup extends Component {
 
 	submitForm = (event) => {
 		event.preventDefault();
-		
-		var input_obj  = {},
-			 flag       = false;
+		var input_obj  = {};
+		var flag       = false;
 
 		// Get obj of form values
 		this.fields.forEach( ({ name, text }) => {
@@ -56,12 +54,10 @@ class CreateStartup extends Component {
 		})
 		.then((response) => response.json())
 		.then((data) => { 
-
 			// Answer from serv actions
 			if (data.code) {
 				this.setState({err: ''});
 				window.location.assign('/mystartup/main');
-
 			} else { // error
 				this.setState({err: 'приносим извинения, произошла ошибка на сервере'});
 			}
