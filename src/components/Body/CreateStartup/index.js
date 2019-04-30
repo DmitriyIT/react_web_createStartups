@@ -8,15 +8,15 @@ class CreateStartup extends Component {
 		super(props);
 		this.state = {
 			err: '',
-			button_text: 'Создать'
-		};
-		this.fields = [
-			{name: 'theme', text: "Тема стартапа", value: ''}, 
-			{name: 'description', text: "Описание подробное", value: ''}, 
-			{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)", value: ''}, 
-			{name: 'peopleNeeded', text: "Нужные люди", value: ''}, 
-			{name: 'contacts', text: "Ваши контакты (отображаются при подаче заявки в стартап: желающие смогут с вами связаться)", value: ''}
-		];
+			button_text: 'Создать',
+			fields : [
+				{name: 'theme', text: "Тема стартапа", value: ''}, 
+				{name: 'description', text: "Описание подробное", value: ''}, 
+				{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)", value: ''}, 
+				{name: 'peopleNeeded', text: "Нужные люди", value: ''}, 
+				{name: 'contacts', text: "Ваши контакты (отображаются при подаче заявки в стартап: желающие смогут с вами связаться)", value: ''}
+			]
+		}
 	}
 
 	submitForm = (event) => {
@@ -25,7 +25,7 @@ class CreateStartup extends Component {
 		var flag       = false;
 
 		// Get obj of form values
-		this.fields.forEach( ({ name, text }) => {
+		this.state.fields.forEach( ({ name, text }) => {
 			if (!event.target[name].value && !flag) {
 				flag = text;
 			}
@@ -41,6 +41,14 @@ class CreateStartup extends Component {
 			this.setState({err: '', button_text: 'Создается'});
 			this.createStartup(input_obj);
 		}
+	}
+
+	textareaChange = (event) => {
+		var new_fields = this.state.fields.map((elem) => {
+			if (elem.name == event.target.name) elem.value = event.target.value;
+			return elem;
+		});
+		this.setState({fields: new_fields});
 	}
 
 	createStartup = (data) => {
@@ -70,7 +78,7 @@ class CreateStartup extends Component {
 			<BigBlank 
 				err={this.state.err} 
 				title="Создать стартап" 
-				fields_input={this.fields} 
+				fields_input={this.state.fields} 
 				button_left={{
 					link: "/mystartup/main",
 					text: "отмена"
