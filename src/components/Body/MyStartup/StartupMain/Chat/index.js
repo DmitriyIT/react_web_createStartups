@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Chat.scss';
 
 import Chat_xml from './Chat_xml.js';
+import Message from './Message';
 
 class Chat extends Component {
 	constructor(props) {
@@ -70,11 +71,17 @@ class Chat extends Component {
 	}
 
 	render() {
-		return <Chat_xml 
-			messages={this.state.messages} 
-			onSubmit={this.onSubmit} 
-			inputMsgChange={this.inputMsgChange} 
-			text_msg={this.state.text_msg} />;
+		var msgs = this.state.messages.map(e => (<Message {...e} key={e.time} />));
+		
+		return (
+			<Chat_xml 
+				onSubmit={this.onSubmit} 
+				inputMsgChange={this.inputMsgChange} 
+				text_msg={this.state.text_msg}>
+
+				{msgs}
+			</Chat_xml>
+		);
 	}
 }
 
