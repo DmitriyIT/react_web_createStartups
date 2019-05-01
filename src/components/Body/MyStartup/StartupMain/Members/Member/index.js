@@ -2,7 +2,7 @@ import React from 'react';
 import './Member.scss';
 
 var Member = ({ name, job, img_src, id, show_button, show_popup, click_showPopup, click_remove }) => {
-	var popupClassShow = show_popup ? '' : 'PopupRemove_show-no';
+	var popupClassShow = show_popup ? 'PopupRemove_show-animate' : 'PopupRemove_show-no';
 	var button = show_button ? (
 		<div className="Member__buttonRemove">
 			<p onClick={click_showPopup} id={id}> Исключить </p>
