@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './ShowStartup.scss';
 
-import ShowStartup_xml from './ShowStartup_xml.js';
+// import ShowStartup_xml from './ShowStartup_xml.js';
+import RegAuth from '../RegAuth/';
 import BigBlank from '../BigBlank';
 
 class ShowStartup extends Component {
@@ -22,7 +23,8 @@ class ShowStartup extends Component {
 
 	componentDidMount() {
 		console.log(this.props.match.params.id);
-		fetch('/getInfoOfStartup1')
+		var id = this.props.match.params.id;
+		fetch('/getInfoOfStartup/' + id)
 			.then(res => res.json())
 			.then(data => {
 				var fields_res = this.state.fields;
@@ -30,50 +32,38 @@ class ShowStartup extends Component {
 					fields_res[i].value = data[fields_res[i].name];
 				}
 
-				this.setState({fields_res});
+				this.setState({fields: fields_res});
 			})
 			.catch(res => console.log('catch: ' + res));
 	}
 
 	submitForm = (event) => {
 		event.preventDefault();
+		var id = this.props.match.params.id;
 		var email;
-		fetch('/isAuth')
+		fetch('/isAuth/' + id)
 			.then(res => res.json())
 			.then(data => {
-				if (data) {
-					window.lockation.assign('/RequestToStartup/' + this.props.match.params.id);
+				if (data.isAuth) {
+					if (data.admin) {
+						this.setState({err: 'вы являетесь атором этого стартапа, вы уже в нем'});
+					} else {
+						window.lockation.assign('/RequestToStartup/' + this.props.match.params.id);
+					}
 				} else {
 					this.setState({showAuth: true});
 				}
 			})
 			.catch(res => console.log('catch: ' + res));
-
-
-		fetch("/", {
-		    headers: {
-		      'Accept': 'application/json',
-		      'Content-Type': 'application/json'
-		    },
-		    method: "POST",
-		    body: JSON.stringify({email: email})
-		})
-		.then((response) => response.json())
-		.then((data) => { 
-
-			// Response data
-			console.log(data.ans)
-			data.ans ?
-				this.setState({err: 'такой email уже используется'})
-				: this.setState({err: ''});
-		})
-		.catch(res => console.log('catch: ' + res));
 	}
 
 
 	render() {
-		return (
-			<BigBlank 
+		return this.state.showAuth ? 
+			<RegAuth 
+				linkHappyPath={'/RequestToStartup/' + this.props.match.params.id}
+				comment='для подачи заявки нужно авторизоваться/зарегистрироваться' />
+			: <BigBlank
 				err={this.state.err} 
 				title="Просмотр стартапа" 
 				fields_input={this.state.fields} 
@@ -84,16 +74,6 @@ class ShowStartup extends Component {
 				button_text={this.state.button_text}
 				submitForm={this.submitForm} 
 				textareaChange={this.textareaChange} />
-		);
-		// return (
-		// 	<ShowStartup_xml
-		// 		err={this.state.err} 
-		// 		submitForm={this.submitForm} 
-		// 		title="Просмотр стартапа" 
-		// 		fields_input={this.state.fields} 
-		// 		button_text={this.state.button_text}
-		// 		textareaChange={this.textareaChange} />
-		// );
 	}
 }
 

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './RegAuth.scss';
 
-import AuthReg from './AuthReg.js';
+import RegAuth_xml from './RegAuth_xml.js';
 
 class RegAuth extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			auth_show: true,
+			linkHappyPath: props.linkHappyPath || '/',
 			err: ''
 		};
 	}
@@ -96,7 +97,7 @@ class RegAuth extends Component {
 			
 			// console.log(data.code + ' userData.name: ' + data.userData.name);
 			if (data) {
-				window.location.assign('/');
+				window.location.assign(this.state.linkHappyPath);
 			} else {
 				this.setState({err: 'введен неверный email или пароль'});
 			}
@@ -129,7 +130,7 @@ class RegAuth extends Component {
 			
 			// console.log(data.code + ' userData.name: ' + data.userData.name);
 			if (data) {
-				window.location.assign('/');
+				window.location.assign(this.state.linkHappyPath);
 			} else {
 				this.setState({err: 'ошибка сервера, приносим извинения'});
 			}
@@ -138,12 +139,13 @@ class RegAuth extends Component {
 	}
 	render() {
 		return (
-			<AuthReg 
+			<RegAuth_xml 
 				submitForm={this.submitForm} 
 				switch2={this.goSwitch} 
 				onChangeEmail={this.onChangeEmail} 
 				isSwitch={this.state.auth_show} 
-				err={this.state.err} />
+				err={this.state.err} 
+				comment={this.props.comment} />
 		);
 	}
 }

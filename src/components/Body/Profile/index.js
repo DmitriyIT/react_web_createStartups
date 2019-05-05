@@ -147,7 +147,9 @@ class Profile extends Component {
 					{...this.state.user_info}
 					clickEdit={this.changeEdit}
 					notifications={this.state.notifications} />
-			: <RegAuth />;
+			: <RegAuth 
+				linkHappyPath='/profile'
+				comment='чтобы войти в профиль нужно зарегистрироваться' />;
 	}
 }
 

@@ -24,6 +24,12 @@
 	.AuthReg__err {
 		color: rgba(207, 88, 88, 1);
 	}
+	.AuthReg__comment {
+		max-width: 75%;
+		color: #5a5555;
+		margin-top: -10px;
+		margin-bottom: 10px;
+	}
 	.AuthReg__field {
 		display: block;
 		width: 70%;

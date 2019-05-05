@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function AuthReg({ submitForm, switch2, onChangeEmail, isSwitch, err }) {
+function AuthReg({ submitForm, switch2, onChangeEmail, isSwitch, err, comment }) {
 	var title = isSwitch ? 'Авторизация' : 'Регистрация';
 	var button = isSwitch ? 'Войти' : 'Зарегистрироваться';
 	var switchA = isSwitch ? 'Регистрация' : 'Авторизация';
@@ -9,7 +9,7 @@ function AuthReg({ submitForm, switch2, onChangeEmail, isSwitch, err }) {
 	return (
 		<div className="AuthReg">
 			<div className="AuthReg__title">{title}</div>
-
+			{ comment ? <div className="AuthReg__comment">{comment}</div> : ''}
 			{ err ? <div className="AuthReg__err">{err}</div> : ''}
 			<form onSubmit={submitForm}>
 				<input name="email" className="AuthReg__field" placeholder="email" onChange={onChangeEmail}></input>

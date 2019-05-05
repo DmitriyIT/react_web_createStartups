@@ -8,52 +8,52 @@ class RequestToStartup extends Component {
 		super(props);
 		this.state = {
 			err: '',
+			happyResult: '',
 			button_text: 'Подать заявку',
 			fields: [
 				{name: 'theme', text: "Тема стартапа", value: ''},
-				{name: 'authoe', text: "Автор", value: ''}
+				{name: 'authoe', text: "Контакты автора стартапа", value: ''}
 			],
 			showAuth: false
 		};
 	}
 
 	componentDidMount() {
-		console.log(this.props.match.params.id)
+		var id = this.props.match.params.id;
+		fetch('/getInfoOfStartup/' + id)
+			.then(res => res.json())
+			.then(data => {
+				var fields_res = this.state.fields;
+				fields_res[0].value = data.theme;
+				fields_res[1].value = data.contacts;
+
+				this.setState({fields: fields_res});
+			})
+			.catch(res => console.log('catch: ' + res));
 	}
 
 	submitForm = (event) => {
 		event.preventDefault();
-		var email
-		
-		fetch('/isAuth')
-			.then(res => res.json())
-			.then(data => {
-				if (data) {
-					window.lockation.assign('/RequestToStartup/' + this.props.match.params.id);
-				} else {
-					this.setState({showAuth: true});
-				}
-			})
-			.catch(res => console.log('catch: ' + res));
 
-
-		fetch("/", {
+		fetch("/sendInvite", {
 		    headers: {
 		      'Accept': 'application/json',
 		      'Content-Type': 'application/json'
 		    },
 		    method: "POST",
-		    body: JSON.stringify({email: email})
+		    body: JSON.stringify({idStartup: this.props.match.params.id})
 		})
 		.then((response) => response.json())
 		.then((data) => { 
-			// Response data
 			console.log(data.ans)
 			data.ans ?
-				this.setState({err: 'такой email уже используется'})
-				: this.setState({err: ''});
+				this.setState({happyResult: 'заявка успешно отправлена', err: ''})
+				: this.setState({err: 'приносим извинения, ошибка сервера'});
 		})
-		.catch(res => console.log('catch: ' + res));
+		.catch(res => {
+			this.setState({err: 'приносим извинения, ошибка сервера'});
+			console.log('catch: ' + res)}
+		);
 	}
 
 
@@ -61,6 +61,7 @@ class RequestToStartup extends Component {
 		return (
 			<RequestToStartup_xml
 				err={this.state.err} 
+				happyResult={this.state.happyResult}
 				submitForm={this.submitForm} 
 				title="Подача заявки" 
 				fields_input={this.state.fields} 

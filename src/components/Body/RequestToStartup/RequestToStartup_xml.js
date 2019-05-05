@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './RequestToStartup.scss';
 
-function CreateStartup_xml({ err, refForm, submitForm, title, fields_input, button_text, textareaChange }) {
+function CreateStartup_xml({ err, happyResult, refForm, submitForm, title, fields_input, button_text, textareaChange }) {
 	var fields = fields_input.map(e => [
 		<div className="CreateStartup__titleField">{e.text}</div>,
 		<textarea className="CreateStartup__field" name={e.name} value={e.value} onChange={textareaChange} />
@@ -10,6 +10,7 @@ function CreateStartup_xml({ err, refForm, submitForm, title, fields_input, butt
 	return (
 		<div className="CreateStartup">
 			<div className="CreateStartup__title">{title}</div>
+			{ happyResult ? <div className="CreateStartup_happyResult">{happyResult}</div> : ''}
 			{ err ? <div className="CreateStartup_err">{err}</div> : ''}
 			<form onSubmit={submitForm} id="createStartup">
 				{fields}
