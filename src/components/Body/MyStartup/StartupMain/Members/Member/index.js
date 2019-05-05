@@ -6,14 +6,11 @@ var Member = ({ name, job, img_src, id, show_button, show_popup, click_showPopup
 	var button = show_button ? (
 		<div className="Member__buttonRemove">
 			<p onClick={click_showPopup} id={id}> Исключить </p>
+			
 			<div className={"PopupRemove " + popupClassShow}>
 				<div className="PopupRemove__text">Вы уверены что хотите исключить участника  ?</div>
-				<div className="PopupRemove__buttonNo" 
-					onClick={click_showPopup} 
-					id={id}> Отмена </div>
-				<div className="PopupRemove__buttonRemove" 
-					onClick={click_remove} 
-					id={id}> Исключить </div>
+				<div className="PopupRemove__buttonNo" onClick={click_showPopup} id={id}> Отмена </div>
+				<div className="PopupRemove__buttonRemove" onClick={click_remove} id={id}> Исключить </div>
 			</div>
 		</div>
 	) : '';

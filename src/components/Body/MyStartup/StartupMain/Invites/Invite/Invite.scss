@@ -1,0 +1,57 @@
+.Invite {
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 16px;
+	color: #1C736B;
+	margin-bottom: 25px;
+
+	div {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.Invite__img img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+	.Invite__line {
+		width: 2px;
+		height: 40px;
+		background-color: #C4C4C4;
+		margin-left: 3px;
+		margin-right: 7px;
+	}
+	.Invite__info {
+		.Invite__info__name {
+			display: block;
+		}
+		.Invite__info__job {
+			display: block;
+			margin-top: 2px;
+			color: #000;
+		}		
+	}
+
+	.Invite__buttons {
+		line-height: 16px;
+		color: #345761;
+		margin-left: 10px;
+		div {
+			cursor: pointer;
+			padding: 2px 5px;
+			background: #D8D8D8;
+			border-radius: 5px;
+		}
+		.Invite__buttons__buttonApply {
+			display: block;
+			background: #FFE486;
+			margin-bottom: 5px;
+		}
+		.Invite__buttons__buttonDeny {
+
+		}
+	}
+}

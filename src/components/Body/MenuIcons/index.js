@@ -1,27 +1,27 @@
 import React from 'react';
 import './MenuIcons.scss';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 var MenuIcons = (props) => {
 	return (
 		<ul className="MenuIcons">
-			<Link to="/mystartup/main">
+			<NavLink to="/mystartup/main" activeClassName="activeMenuLink">
 				<li className="MenuIcons__startup">
 					<img src="../../img/icon/startup.svg" />
 				</li>
-			</Link>
+			</NavLink>
 
-			<Link to="/profile">
+			<NavLink to="/profile" activeClassName="activeMenuLink">
 				<li className="MenuIcons__people">
 					<img src="../../img/icon/people.svg" />
 				</li>
-			</Link>
+			</NavLink>
 			
-			<Link to="/">
+			<NavLink exact to="/" activeClassName="activeMenuLink">
 				<li className="MenuIcons__find">
 					<img src="../../img/icon/find.svg" />
 				</li>
-			</Link>
+			</NavLink>
 			<div className="MenuIcons__div_for_circle"></div>
 			<div className="MenuIcons__div_for_shadow"></div>
 		</ul>

@@ -11,16 +11,24 @@
 	.MenuIcons {
 		display: inline-block;
 	}
-	.MyStartup, .CreateStartup, .BigBlank {
+	.MyStartup, .CreateStartup, .BigBlank, .Profile, .Profile_edit {
 		position: relative;
 		z-index: 20;
 		margin-left: 91px;
 		margin-top: -20px;
 	}
-	.CreateStartup, .BigBlank  {
+	.CreateStartup, .BigBlank, .Profile, .Profile_edit {
 		margin-top: -30px;	
 	}
 	.MyStartup .MyStartupTop {
 		margin-top: -35px;
+	}
+	.AuthReg {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

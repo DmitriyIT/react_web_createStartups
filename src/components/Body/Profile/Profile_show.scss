@@ -1,0 +1,96 @@
+.Profile {
+	width: 581px;
+
+	font-family: Fira Sans;
+	font-style: italic;
+	font-weight: 500;
+	font-size: 15px;
+	color: #345761;
+
+	.Profile__top {
+		overflow: hidden;
+		border-radius: 10px 10px 5px 5px;
+		box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
+	}
+
+	
+	
+	.Profile__title {
+		min-height: 50px;
+		padding-left: 20px;
+		width: 100%;
+		background: linear-gradient(165.66deg, #FFE99C 16.29%, #FFE486 115.92%, rgba(255, 164, 91, 0.8) 166.56%);
+		line-height: 50px;
+		color: #24505F;
+	}
+	.Profile_err {
+		color: rgba(207, 88, 88, 1);
+		margin-left: 20px;
+		margin-top: 10px;
+		margin-bottom: -3px;
+	}
+
+	.Profile__img {
+		display: inline-block;
+		vertical-align: top;
+		width: 125px;
+		height: 125px;
+		margin: 15px 15px 17px 22px;
+		border-radius: 5px;
+		overflow: hidden;
+		img {
+			width: 125px;
+			height: auto;
+			background: #F3F3F3;
+			border-radius: 5px;
+		}
+	}
+	.Profile__rightBlock {
+		display: inline-block;
+		margin-top: 22px;	
+		.Profile__rightBlock__name {
+			font-size: 15px;
+			line-height: 18px;
+			margin-bottom: 7px;
+		}
+		.Profile__rightBlock__email {
+			font-size: 14px;
+			margin-bottom: 7px;
+		}
+		.Profile__rightBlock__button {
+			padding: 5px;
+			background: linear-gradient(163.39deg, #FFE486 145.71%, #009D90 431.65%);
+			border-radius: 5px;
+			font-size: 14px;
+		}
+	}
+
+	.Profile__bottom {
+		overflow: hidden;
+		margin-top: 15px;
+		border-radius: 5px;
+		padding: 10px 22px 22px;
+		box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
+		.Profile__bottom__title {
+			margin-bottom: 11px;
+		}
+		.Profile__bottom_bgGrey {
+			padding: 10px 5px;
+			min-height: 150px;
+			max-height: 380px;
+			overflow-y: scroll; 
+			background: #F3F3F3;
+			border-radius: 5px;
+		}
+		.Profile__bottom__notification {
+			padding: 7px;
+			margin-bottom: 10px;
+			background: #E2E2E2;
+			border-radius: 10px;
+			
+			font-size: 13px;
+			line-height: 15px;
+			color: #3b4042;
+		}
+	}
+}

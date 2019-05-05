@@ -17,6 +17,13 @@
 	line-height: 50px;
 	font-size: 24px;
 	color: #254E5B;
+	text-decoration: none;
+	outline: none;
+	a, a:visited, a:active {
+		text-decoration: none;
+		outline: none;
+		color: #254E5B;
+	}
 }
 .Header__button_exit {
 	position: relative;

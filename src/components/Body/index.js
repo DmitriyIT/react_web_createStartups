@@ -7,6 +7,7 @@ import FindStartup from './FindStartup';
 import ShowStartup from './ShowStartup';
 import RequestToStartup from './RequestToStartup';
 import MyStartup from './MyStartup';
+import Profile from './Profile';
 import RegAuth from './RegAuth';
 import CreateStartup from './CreateStartup';
 import ChangeStartup from './ChangeStartup';
@@ -19,7 +20,7 @@ function MainComp() {
 				<Route exact path="/" component={FindStartup} />
 				<Route path="/ShowStartup/:id" component={ShowStartup} />
 				<Route path="/RequestToStartup/:id" component={RequestToStartup} />
-				<Route path="/profile" component={MyStartup} />
+				<Route path="/profile" component={Profile} />
 				<Route path="/mystartup/main" component={MyStartup} />
 				<Route path="/mystartup/create" component={CreateStartup} />
 				<Route path="/mystartup/change" component={ChangeStartup} />

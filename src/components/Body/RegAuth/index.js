@@ -39,16 +39,12 @@ class RegAuth extends Component {
 		})
 		.then((response) => response.json())
 		.then((data) => { 
-
-			// Response data
 			console.log(data.ans)
 			data.ans ?
 				this.setState({err: 'такой email уже используется'})
 				: this.setState({err: ''});
 		})
-		.catch(
-			// Error
-			res => console.log('catch' + res));
+		.catch(res => console.log('catch' + res));
 	}
 
 	refForm = React.createRef();

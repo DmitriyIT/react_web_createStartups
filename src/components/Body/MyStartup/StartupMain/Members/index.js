@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Members.scss';
 
+import Bg_grey from '../Bg_grey.js';
 import Member from './Member';
 
 class Members extends Component {
@@ -72,12 +73,11 @@ class Members extends Component {
 				click_remove={this.click_remove} />
 		));
 		return (
-			<div className="Members">
+			<Bg_grey>
 				{mbrs}
-			</div>
+			</Bg_grey>
 		);
 	}
 }
-
 
 export default Members;
