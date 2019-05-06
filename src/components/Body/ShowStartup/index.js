@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './ShowStartup.scss';
 
 // import ShowStartup_xml from './ShowStartup_xml.js';
@@ -17,6 +18,7 @@ class ShowStartup extends Component {
 				{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)", value: ''},
 				{name: 'peopleNeeded', text: "Нужные люди", value: ''}
 			],
+			redirect: false,
 			showAuth: false
 		};
 	}
@@ -48,7 +50,8 @@ class ShowStartup extends Component {
 					if (data.admin) {
 						this.setState({err: 'вы являетесь атором этого стартапа, вы уже в нем'});
 					} else {
-						window.lockation.assign('/RequestToStartup/' + this.props.match.params.id);
+						// window.lockation.assign('/RequestToStartup/' + this.props.match.params.id);
+						this.setState({redirect: true});
 					}
 				} else {
 					this.setState({showAuth: true});
@@ -59,6 +62,9 @@ class ShowStartup extends Component {
 
 
 	render() {
+		var path = '/RequestToStartup/' + this.props.match.params.id;
+		if (this.state.redirect) return <Redirect to={path} />;
+
 		return this.state.showAuth ? 
 			<RegAuth 
 				linkHappyPath={'/RequestToStartup/' + this.props.match.params.id}

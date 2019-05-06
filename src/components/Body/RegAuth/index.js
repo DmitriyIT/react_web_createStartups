@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './RegAuth.scss';
 
 import RegAuth_xml from './RegAuth_xml.js';
@@ -9,6 +10,7 @@ class RegAuth extends Component {
 		this.state = {
 			auth_show: true,
 			linkHappyPath: props.linkHappyPath || '/',
+			redirect: false,
 			err: ''
 		};
 	}
@@ -95,9 +97,9 @@ class RegAuth extends Component {
 			// 	}
 			// }
 			
-			// console.log(data.code + ' userData.name: ' + data.userData.name);
 			if (data) {
-				window.location.assign(this.state.linkHappyPath);
+				// window.location.assign(this.state.linkHappyPath);
+				this.setState({redirect: true});
 			} else {
 				this.setState({err: 'введен неверный email или пароль'});
 			}
@@ -130,7 +132,8 @@ class RegAuth extends Component {
 			
 			// console.log(data.code + ' userData.name: ' + data.userData.name);
 			if (data) {
-				window.location.assign(this.state.linkHappyPath);
+				// window.location.assign(this.state.linkHappyPath);
+				this.setState({redirect: true});
 			} else {
 				this.setState({err: 'ошибка сервера, приносим извинения'});
 			}
@@ -138,6 +141,8 @@ class RegAuth extends Component {
 		.catch(function(res){ console.log('catch: ' + res) });
 	}
 	render() {
+		if (this.state.redirect) return <Redirect to={this.state.linkHappyPath} />;
+
 		return (
 			<RegAuth_xml 
 				submitForm={this.submitForm} 
