@@ -1,5 +1,5 @@
 .BigBlank {
-	width: 581px;
+	max-width: 581px;
 	overflow: hidden;
 	border-radius: 10px 10px 5px 5px;
 	box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
@@ -65,5 +65,11 @@
 		font-weight: 500;
 		font-size: 15px;
 		color: #265D6E;
+	}
+}
+
+@media (max-width: 750px) {
+	.BigBlank {
+		// max-width: 581px;
 	}
 }

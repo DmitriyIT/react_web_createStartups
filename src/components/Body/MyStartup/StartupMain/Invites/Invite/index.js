@@ -13,7 +13,7 @@ var Invite = ({ name, jobList, img_src, id, onSelectChange, selectValue, click_a
 				<div className="Invite__info__name">{name}</div>
 				<div className="Invite__info__job">
 					<select onChange={onSelectChange} value={selectValue} id={id} >
-						{jobList.map(e => <option value={e}> {e} </option>)}
+						{jobList.map(e => (<option value={e}> {e} </option>))}
 					</select>
 				</div>
 			</div>

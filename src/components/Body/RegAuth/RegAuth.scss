@@ -1,5 +1,5 @@
 .AuthReg {
-	width: 430px;
+	max-width: 430px;
 	border-radius: 10px 10px 5px 5px;
 	overflow: hidden;
 	box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.15);
@@ -67,5 +67,26 @@
 		color: #265D6E;
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+}
+
+@media (min-width: 550px) {
+	.AuthReg {
+		width: 430px;
+	}
+}
+@media (max-width: 550px) {
+	.AuthReg {
+		min-width: 70%;
+	}	
+}
+@media (max-width: 450px) {
+	
+	.AuthReg {
+		.AuthReg__button {
+			display: block;
+			margin-left: 0;
+			margin-top: 11px;
+		}
 	}
 }

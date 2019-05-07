@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Invites.scss';
 
 import Bg_grey from '../Bg_grey.js';
@@ -90,22 +91,30 @@ class Invites extends Component {
 		if (this.state.invites.length > 0) {
 			invites = this.state.invites.map(e => {
 				return (
-					<Invite
-						name={e.name}
-						jobList={e.jobList}
-						img_src={e.img_src}
-						id={e.id}
-						onSelectChange={this.onSelectChange}
-						selectValue={this.state.selectChoose[e.id]}
-						click_apply={this.click_apply}
-						click_deny={this.click_deny} />
+					<CSSTransition 
+						classNames="invite_item"
+						timeout={400}
+						key={e.id}
+					>
+						<Invite
+							name={e.name}
+							jobList={e.jobList}
+							img_src={e.img_src}
+							id={e.id}
+							onSelectChange={this.onSelectChange}
+							selectValue={this.state.selectChoose[e.id]}
+							click_apply={this.click_apply}
+							click_deny={this.click_deny} />
+					</CSSTransition>
 				);
 			});
 			invites.push(this.state.comment);
 		}
 		return (
 			<Bg_grey>
-				{invites}
+				<TransitionGroup className="invite_animation">
+					{invites}
+				</TransitionGroup>
 			</Bg_grey>
 		);
 	}

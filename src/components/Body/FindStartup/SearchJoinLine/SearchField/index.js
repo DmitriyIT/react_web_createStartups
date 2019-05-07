@@ -9,8 +9,6 @@ var SearchField = ({ onSubmit, onChangeSearchStr, search_str }) => {
 					value={search_str} 
 					onChange={onChangeSearchStr} />
 			</form>
-			<div className="SearchField__div_white1" />
-			<div className="SearchField__div_white2" />
 		</div>
 	);
 };

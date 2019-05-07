@@ -14,3 +14,9 @@
 	font-size: 16px;
 	color: #254E5B;
 }
+
+@media (max-width: 745px) {
+	.SearchButton {
+		width: 70px;
+	}
+}

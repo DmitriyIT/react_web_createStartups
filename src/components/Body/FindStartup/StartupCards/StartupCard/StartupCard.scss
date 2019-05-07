@@ -82,3 +82,39 @@
 	/*background-color: #FFE485;*/
 	background: linear-gradient(145.33deg, #FFE486 145.71%, #009D90 431.65%);
 }
+
+@media (max-width: 320px) {
+	.StartupCard {
+		display: block;
+		width: 80%;
+		margin-bottom: 30px;
+	}
+	.Startup__popup {
+		right: -20%;
+		top: -110%;
+	}
+}
+
+@media (max-width: 400px) {
+	.StartupCard {
+		display: block;
+		width: 70%;
+		margin-bottom: 30px;
+	}
+	.Startup__popup {
+		right: -20%;
+		top: -110%;
+	}
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+	.StartupCard {
+		display: block;
+		width: 60%;
+		margin-bottom: 30px;
+	}
+	.Startup__popup {
+		right: -20%;
+		top: -110%;
+	}
+}

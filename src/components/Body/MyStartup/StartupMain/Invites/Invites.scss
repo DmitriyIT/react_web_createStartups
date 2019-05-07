@@ -1,0 +1,16 @@
+.invite_item-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.invite_item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in, transform 300ms;
+}
+.invite_item-exit {
+  opacity: 1;
+}
+.invite_item-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+}

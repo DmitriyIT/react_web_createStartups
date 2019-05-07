@@ -2,3 +2,10 @@
 	margin-top: 20px;
 	margin-bottom: 8px;
 }
+
+@media (max-width: 750px) {
+	.LineOFConditions {
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}	
+}

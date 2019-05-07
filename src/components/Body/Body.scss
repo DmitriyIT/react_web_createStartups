@@ -1,5 +1,6 @@
 .Body {
 	padding-top: 12px;
+	padding-bottom: 20px;
 
 	.SearchJoinLine {
 		position: relative;
@@ -30,5 +31,32 @@
 		transform: translate(-50%, -50%); 
 		margin-left: auto;
 		margin-right: auto;
+		z-index: 20;
 	}
+}
+@media (max-width: 745px) {
+	.Body {
+		.SearchJoinLine {
+			margin-left: 0px;
+		}
+		.MyStartup, .CreateStartup, .BigBlank, .Profile, .Profile_edit {
+			position: relative;
+			z-index: 20;
+			margin-left: 0;
+			margin-top: 0;
+		}
+		.CreateStartup, .BigBlank, .Profile, .Profile_edit {
+			margin-top: 0px;	
+		}
+		.MyStartup .MyStartupTop {
+			margin-top: 0px;
+		}
+		.AuthReg {
+			top: 55%;
+			left: 50%;
+			transform: translate(-50%, -50%); 
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}	
 }

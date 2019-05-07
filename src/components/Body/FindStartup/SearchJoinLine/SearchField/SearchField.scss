@@ -2,15 +2,14 @@
 	position: relative;
 	width: 431px;
 	height: 30px;
+	padding: 2px 3px;
+	border-radius: 5px;
 	background-color: #FFE073;
 }
 .SearchField__form {
 	position: relative;
-	width: 96%;
-	height: 80%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	height: 100%;
 	border: none;
 	padding: 0;
 	padding-left: 10px;
@@ -32,20 +31,10 @@
 	}
 }
 
-
-.SearchField__div_white1 {
-	position: absolute;
-	top: 4px;
-	left: 0;
-	width: 5px;
-	height: 11px;
-	background-color: #fff;
-}
-.SearchField__div_white2 {
-	position: absolute;
-	right: 0;
-	bottom: 4px;
-	width: 5px;
-	height: 11px;
-	background-color: #fff;
+@media (max-width: 745px) {
+	.SearchField__form {
+	}
+	.SearchField {
+		width: calc(100% - 141px);
+	}
 }
