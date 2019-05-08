@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base path, all include 1`] = `
+<div
+  className="AuthReg"
+>
+  <div
+    className="AuthReg__title"
+  >
+    Авторизация
+  </div>
+  <div
+    className="AuthReg__comment"
+  >
+    чтобы войти в профиль нужно зарегистрироваться
+  </div>
+  
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="AuthReg__field"
+      name="email"
+      onChange={[Function]}
+      placeholder="email"
+    />
+    <input
+      className="AuthReg__field"
+      name="password"
+      placeholder="пароль"
+    />
+    
+    <div
+      className="AuthReg__swith"
+      onClick={[Function]}
+    >
+       
+      Регистрация
+    </div>
+    <input
+      className="AuthReg__button"
+      type="submit"
+      value="Войти"
+    />
+  </form>
+</div>
+`;
+
+exports[`without comment 1`] = `
+<div
+  className="AuthReg"
+>
+  <div
+    className="AuthReg__title"
+  >
+    Авторизация
+  </div>
+  
+  
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="AuthReg__field"
+      name="email"
+      onChange={[Function]}
+      placeholder="email"
+    />
+    <input
+      className="AuthReg__field"
+      name="password"
+      placeholder="пароль"
+    />
+    
+    <div
+      className="AuthReg__swith"
+      onClick={[Function]}
+    >
+       
+      Регистрация
+    </div>
+    <input
+      className="AuthReg__button"
+      type="submit"
+      value="Войти"
+    />
+  </form>
+</div>
+`;
