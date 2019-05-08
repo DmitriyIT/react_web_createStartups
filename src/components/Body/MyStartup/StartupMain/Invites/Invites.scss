@@ -5,7 +5,8 @@
 .invite_item-enter-active {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 300ms ease-in, transform 300ms;
+  transition: opacity 200ms ease-in, transform 200ms;
+  transform-origin: left center;
 }
 .invite_item-exit {
   opacity: 1;

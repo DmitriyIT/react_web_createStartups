@@ -2,3 +2,21 @@
 	margin-right: 36px;
 	margin-bottom: 49px;
 }
+
+.Startup_animation-enter {
+  opacity: 0.3;
+  transform: scale(0.95);
+}
+.Startup_animation-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 400ms ease-in, transform 200ms;
+  transform-origin: 10% 20%;
+}
+.Startup_animation-exit {
+  opacity: 1;
+}
+.Startup_animation-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './StartupCards.css';
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import StartupCard from './StartupCard';
 
 
@@ -16,7 +16,22 @@ var StartupCards = ({ startups }) => {
 		]
 	};
 	startups = startups || [{title: 'default value', body: 'smth is wrong', id: 3, more_info: more_info}];
-	return startups.map((item) => <StartupCard {...item} key={item.id} />);
+	var arr_sts = startups.map((item) => (
+			<CSSTransition 
+				key={item.id}
+				timeout={500}
+				classNames="Startup_animation"
+			>
+				<StartupCard {...item} key={item.id} />
+			</CSSTransition>
+		)
+	);
+
+	return (
+		<TransitionGroup component={null}>
+			{arr_sts}
+		</TransitionGroup>
+	);
 };
 
 export default StartupCards;

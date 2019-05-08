@@ -91,4 +91,20 @@
 }
 
 
-
+.MyStartupBottom-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.MyStartupBottom-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in, transform 300ms;
+  transform-origin: top center;
+}
+.MyStartupBottom-exit {
+  opacity: 1;
+}
+.MyStartupBottom-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+}

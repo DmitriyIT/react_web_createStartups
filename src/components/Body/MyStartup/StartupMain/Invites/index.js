@@ -93,7 +93,7 @@ class Invites extends Component {
 				return (
 					<CSSTransition 
 						classNames="invite_item"
-						timeout={400}
+						timeout={200}
 						key={e.id}
 					>
 						<Invite
@@ -111,8 +111,8 @@ class Invites extends Component {
 			invites.push(this.state.comment);
 		}
 		return (
-			<Bg_grey>
-				<TransitionGroup className="invite_animation">
+			<Bg_grey id="awdddagrsg">
+				<TransitionGroup component={null}>
 					{invites}
 				</TransitionGroup>
 			</Bg_grey>

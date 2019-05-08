@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`make snapshot  1`] = `
+<div
+  className="StartupCard"
+>
+  <div
+    className="StartupCard__title"
+  >
+     
+    title smth
+     
+  </div>
+  <div
+    className="StartupCard__body"
+  >
+     
+    body text
+     
+  </div>
+  <div
+    className="StartupCard__bottomLine"
+  />
+  <img
+    className="StartupCard__triangle"
+    src="../../img/triangle.svg"
+  />
+  <a
+    href="/showStartup/21"
+    onClick={[Function]}
+  >
+    <div
+      className="StartupCard__button"
+    >
+      Просмотр
+    </div>
+  </a>
+  <div
+    className="Startup__popup"
+  >
+    <div
+      className="popup__main-div"
+    >
+      <div
+        className="popup__author"
+      >
+        <p>
+          Автор: 
+        </p>
+        <img
+          src="../../img/icon/people.svg"
+        />
+        <p
+          className="popup__author-name"
+        >
+           
+          Вася Вася
+           
+        </p>
+      </div>
+      <div
+        className="popup__need"
+      >
+        <p>
+          Нужны:
+        </p>
+        <ul>
+          <li>
+             
+            программист JS
+             
+            (найден)
+             
+          </li>
+          <li>
+             
+            маркетолог
+             
+            
+             
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="popup__back-div"
+    />
+  </div>
+</div>
+`;

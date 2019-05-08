@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base path, all include 1`] = `
+<div
+  className="BigBlank"
+>
+  <div
+    className="BigBlank__title"
+  >
+    заголовок
+  </div>
+  <div
+    className="BigBlank_err"
+  >
+    awd
+  </div>
+  <form
+    id="BigBlank"
+    onSubmit={[Function]}
+  >
+    <div
+      className="BigBlank__titleField"
+    >
+      Тема стартапа
+    </div>
+    <textarea
+      className="BigBlank__field"
+      name="theme"
+      onChange={[Function]}
+      value=""
+    />
+    <div
+      className="BigBlank__titleField"
+    >
+      Описание подробное
+    </div>
+    <textarea
+      className="BigBlank__field"
+      name="description"
+      onChange={[Function]}
+      value=""
+    />
+  </form>
+  <input
+    className="BigBlank__button"
+    form="BigBlank"
+    type="submit"
+    value="создать"
+  />
+  <a
+    href="/mystartup/main"
+    onClick={[Function]}
+  >
+    <div
+      className="BigBlank__button"
+    >
+       
+      отмена
+       
+    </div>
+  </a>
+</div>
+`;
+
+exports[`without buttonLeft && error 1`] = `
+<div
+  className="BigBlank"
+>
+  <div
+    className="BigBlank__title"
+  >
+    заголовок
+  </div>
+  
+  <form
+    id="BigBlank"
+    onSubmit={[Function]}
+  >
+    <div
+      className="BigBlank__titleField"
+    >
+      Тема стартапа
+    </div>
+    <textarea
+      className="BigBlank__field"
+      name="theme"
+      onChange={[Function]}
+      value=""
+    />
+    <div
+      className="BigBlank__titleField"
+    >
+      Описание подробное
+    </div>
+    <textarea
+      className="BigBlank__field"
+      name="description"
+      onChange={[Function]}
+      value=""
+    />
+  </form>
+  <input
+    className="BigBlank__button"
+    form="BigBlank"
+    type="submit"
+    value="создать"
+  />
+  
+</div>
+`;
+
+exports[`without buttonLeft 1`] = `
+<div
+  className="BigBlank"
+>
+  <div
+    className="BigBlank__title"
+  >
+    заголовок
+  </div>
+  <div
+    className="BigBlank_err"
+  >
+    awd
+  </div>
+  <form
+    id="BigBlank"
+    onSubmit={[Function]}
+  >
+    <div
+      className="BigBlank__titleField"
+    >
+      Тема стартапа
+    </div>
+    <textarea
+      className="BigBlank__field"
+      name="theme"
+      onChange={[Function]}
+      value=""
+    />
+    <div
+      className="BigBlank__titleField"
+    >
+      Описание подробное
+    </div>
+    <textarea
+      className="BigBlank__field"
+      name="description"
+      onChange={[Function]}
+      value=""
+    />
+  </form>
+  <input
+    className="BigBlank__button"
+    form="BigBlank"
+    type="submit"
+    value="создать"
+  />
+  
+</div>
+`;

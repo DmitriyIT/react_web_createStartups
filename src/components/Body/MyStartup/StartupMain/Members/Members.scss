@@ -1,0 +1,17 @@
+.Member_item-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.Member_item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 200ms ease-in, transform 200ms;
+  transform-origin: left center;
+}
+.Member_item-exit {
+  opacity: 1;
+}
+.Member_item-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+}

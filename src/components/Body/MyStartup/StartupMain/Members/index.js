@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Members.scss';
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Bg_grey from '../Bg_grey.js';
 import Member from './Member';
 
@@ -61,20 +61,28 @@ class Members extends Component {
 
 	render() {
 		var mbrs = this.state.members.map(e => (
-			<Member 
-				name={e.name} 
-				job={e.job} 
-				img_src={e.img_src} 
-				id={e.id} 
-				key={e.id} 
-				show_button={this.state.show_button} 
-				click_showPopup={this.click_showPopup} 
-				show_popup={e.show_popup}
-				click_remove={this.click_remove} />
+			<CSSTransition 
+				classNames="Member_item"
+				timeout={200}
+				key={e.id}
+			>
+				<Member 
+					name={e.name} 
+					job={e.job} 
+					img_src={e.img_src} 
+					id={e.id} 
+					key={e.id} 
+					show_button={this.state.show_button} 
+					click_showPopup={this.click_showPopup} 
+					show_popup={e.show_popup}
+					click_remove={this.click_remove} />
+			</CSSTransition>
 		));
 		return (
 			<Bg_grey>
+				<TransitionGroup component={null}>
 				{mbrs}
+				</TransitionGroup>
 			</Bg_grey>
 		);
 	}
