@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import './RegAuth.scss';
 
+import AnimateCreate from '../AnimateCreate.js';
 import RegAuth_xml from './RegAuth_xml.js';
 
 class RegAuth extends Component {
@@ -144,6 +145,7 @@ class RegAuth extends Component {
 		if (this.state.redirect) return <Redirect to={this.state.linkHappyPath} />;
 
 		return (
+			<AnimateCreate>
 			<RegAuth_xml 
 				submitForm={this.submitForm} 
 				switch2={this.goSwitch} 
@@ -151,6 +153,7 @@ class RegAuth extends Component {
 				isSwitch={this.state.auth_show} 
 				err={this.state.err} 
 				comment={this.props.comment} />
+			</AnimateCreate>
 		);
 	}
 }

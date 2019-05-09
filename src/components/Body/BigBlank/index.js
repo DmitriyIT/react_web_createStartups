@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './BigBlank.scss';
 
+import AnimateCreate from '../AnimateCreate.js';
+
 function BigBlank({ err, title, fields_input, button_left, button_text, submitForm, textareaChange }) {
 	
 	var fields = fields_input.map(e => [
@@ -12,9 +14,11 @@ function BigBlank({ err, title, fields_input, button_left, button_text, submitFo
 		<div className="BigBlank">
 			<div className="BigBlank__title">{title}</div>
 			{ err ? <div className="BigBlank_err">{err}</div> : ''}
+			<AnimateCreate>
 			<form onSubmit={submitForm} id="BigBlank">
 				{fields}
 			</form>
+			</AnimateCreate>
 
 			<input type="submit" form="BigBlank" className="BigBlank__button" value={button_text} />
 			

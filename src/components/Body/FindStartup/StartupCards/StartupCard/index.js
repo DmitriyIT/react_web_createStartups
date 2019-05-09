@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './StartupCard.scss';
 import Startup__popup from './Startup__popup';
 
+import PropTypes from 'prop-types';
+
 var StartupCard = ({ title, body, id, more_info }) => {
 	return (
 		<div className="StartupCard">
@@ -17,6 +19,16 @@ var StartupCard = ({ title, body, id, more_info }) => {
 			<Startup__popup {...more_info} />
 		</div>
 	);
+};
+
+StartupCard.propTypes = {
+	title: PropTypes.string.isRequired,
+	body: PropTypes.string, 
+	id: PropTypes.number,
+	more_info: PropTypes.object
+};
+StartupCard.defaultProps = {
+	title: "default title ')"
 };
 
 export default StartupCard;

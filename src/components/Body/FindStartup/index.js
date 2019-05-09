@@ -13,6 +13,7 @@ class FindStartup extends Component {
 			startups: [],
 			search_str: '',
 			num_page: 1,
+			isExistNextPage: true,
 			show_LineOFConditions: false
 		}
 	}
@@ -52,7 +53,10 @@ class FindStartup extends Component {
 		})
 		.then((response) => response.json())
 		.then((data) => {
-			this.setState({ startups: data })
+			this.setState({ 
+				startups: data.startups,
+				isExistNextPage: data.isExistNextPage
+			})
 		});
 	}
 
@@ -91,6 +95,7 @@ class FindStartup extends Component {
 				<LineOFConditions show={this.state.show_LineOFConditions} />
 				<StartupCards startups={this.state.startups} />
 				<MenuPagesBottom 
+					isExistNextPage={this.state.isExistNextPage}
 					moveNextPage={this.moveNextPage}
 					moveBackPage={this.moveBackPage}
 					moveFirstPage={this.moveFirstPage}

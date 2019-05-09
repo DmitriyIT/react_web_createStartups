@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Profile_edit.scss';
 
+import AnimateCreate from '../AnimateCreate.js';
 
 function Profile_xml({ img_src, email, fname, sname, aboute, err, submitForm, textareaChange, refInputFile, buttonInputFileClick, inputFileHandler, goBack}) {
 	var arrFields = [ 
@@ -30,9 +31,11 @@ function Profile_xml({ img_src, email, fname, sname, aboute, err, submitForm, te
 				</div>
 			</div>
 
+		<AnimateCreate>
 			<form onSubmit={submitForm} id="Profile">				
 				{fields}
 			</form>
+		</AnimateCreate>
 
 			<input type="submit" form="Profile" className="Profile__button" value='Сохранить' />
 			<Link to='/profile'>

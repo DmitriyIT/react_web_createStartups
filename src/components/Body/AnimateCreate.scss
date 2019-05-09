@@ -1,0 +1,17 @@
+.AnimateCreate-enter {
+  opacity: 0.5;
+  transform: scale(0.97);
+}
+.AnimateCreate-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 350ms ease-in, transform 300ms;
+  transform-origin: left top;
+}
+.AnimateCreate-exit {
+  opacity: 1;
+}
+.AnimateCreate-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+}
