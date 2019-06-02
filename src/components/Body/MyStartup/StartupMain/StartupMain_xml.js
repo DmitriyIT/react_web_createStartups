@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './StartupMain.scss';
 
 
-var StartupMain_xml = ({ title, description }) => {
+var StartupMain_xml = ({ title, description, isAdmin }) => {
 
 	return (
 		<div className="MyStartupTop">
@@ -22,8 +22,8 @@ var StartupMain_xml = ({ title, description }) => {
 				<div className="MyStartupTop__switchButton">Заявки</div>
 			</NavLink>
 
-			<Link to='/mystartup/change'>
-				<div className="MyStartupTop__rightButton">Редактировать</div>
+			<Link to={isAdmin ? '/mystartup/change' : '/mystartup/exit'}>
+				<div className="MyStartupTop__rightButton">{isAdmin ? 'Редактировать' : 'Покинуть стартап'}</div>
 			</Link>
 		</div>
 	);

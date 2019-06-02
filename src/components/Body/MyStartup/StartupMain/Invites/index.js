@@ -106,9 +106,12 @@ class Invites extends Component {
 						<Invite
 							name={e.name}
 							jobList={e.jobList}
+							possitionWanted={e.possitionWanted}
+							aboute={e.aboute}
 							img_src={e.img_src}
 							id={e.id}
 							onSelectChange={this.onSelectChange}
+							showButton={this.props.isAdmin}
 							selectValue={this.state.selectChoose[e.id]}
 							click_apply={this.click_apply}
 							click_deny={this.click_deny} />

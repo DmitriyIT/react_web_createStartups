@@ -51,10 +51,8 @@ class ChangeStartup extends Component {
 
 	submitForm = (event) => {
 		event.preventDefault();
-		var start_fields = this.state.fields_startState,
-			input_obj     = {},
-			flag          = false,
-			flag_of_diff  = false;
+		var input_obj     = {},
+			flag          = false;
 
 		// Get obj of form values
 		this.state.fields.forEach( ({ name, text }) => {
@@ -64,26 +62,14 @@ class ChangeStartup extends Component {
 			input_obj[name] = event.target[name].value;
 		});
 
-		// Valid on difference between start and write fields
-		if (!flag) {
-			start_fields.forEach( ({ name, value }) => {
-				console.log(`input_obj[${name}] = ${input_obj[name]} vs ${value} `);
-				if (input_obj[name] != value) flag_of_diff = true;
-			});
-		}
-
-		console.log('flag :' + flag + ' input_obj = ' + input_obj);
-		console.log(input_obj);
-		console.log('flagofDiff :' + flag_of_diff + ' start_fields: ');
-		console.log(start_fields);
 		// Valid of empty lines
 		if (flag) {
 			var err = 'поле \"' + flag + '\" не заполнено';
 			this.setState({err: err});
-		} else if (flag_of_diff) {
+		} else {
 			// Move changes startup
 			console.log('yes')
-			this.setState({err: '', button_text: 'Создается'});
+			this.setState({err: '', button_text: 'Созраняется'});
 			this.ChangeStartup(input_obj);
 		}
 	}
@@ -100,7 +86,7 @@ class ChangeStartup extends Component {
 		.then((response) => response.json())
 		.then((data) => { 
 			// Answer from serv actions
-			if (data.code) { // happy path
+			if (data.ans) { // happy path
 				this.setState({
 					err: '',
 					redirectToMain: true

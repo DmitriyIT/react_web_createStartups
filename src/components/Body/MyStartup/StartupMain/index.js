@@ -23,7 +23,7 @@ class StartupMain extends Component {
 	render() {
 		return (
 			<Fragment>
-				<StartupMain_xml title={this.props.startup.title} description={this.props.startup.description} />
+				<StartupMain_xml title={this.props.startup.title} description={this.props.startup.description} isAdmin={this.props.isAdmin} />
 				<CSSTransition
 					in={this.state.show_anim}
 					timeout={700}
@@ -34,10 +34,14 @@ class StartupMain extends Component {
 							<Route exact path="/mystartup/main"   render={(props) => { 
 								return <Chat {...props} userData={this.props.userData} /> 
 							}} />
+							
 							<Route path="/mystartup/main/members" render={(propsLocal) => {
 								return <Members isAdmin={this.props.isAdmin} {...propsLocal} />
 							}} />
-							<Route path="/mystartup/main/invites" component={Invites} />
+
+							<Route path="/mystartup/main/invites" render={(propsLocal) => {
+								return <Invites isAdmin={this.props.isAdmin} {...propsLocal} />
+							}} />
 						</Switch>
 					</div>
 				</CSSTransition>

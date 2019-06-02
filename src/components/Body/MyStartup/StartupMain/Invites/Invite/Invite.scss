@@ -54,4 +54,25 @@
 
 		}
 	}
+	.Invite__aboute {
+		display: inline-block;
+		padding-left: 14px;
+		max-width: 240px;
+		vertical-align: top;
+		div {
+			display: block;
+		}
+		.Invite__aboute__position {
+
+		}
+		.Invite__aboute__discribePeople {
+
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.Invite__aboute {
+		padding: 5px 0 3px 0!important;
+	}
 }

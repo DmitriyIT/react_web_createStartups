@@ -1,4 +1,4 @@
-.BigBlank {
+.CreateStartup {
 	max-width: 581px;
 	overflow: hidden;
 	border-radius: 10px 10px 5px 5px;
@@ -11,7 +11,7 @@
 
 	color: #345761;
 	
-	.BigBlank__title {
+	.CreateStartup__title {
 		min-height: 50px;
 		padding-left: 20px;
 		width: 100%;
@@ -19,7 +19,7 @@
 		line-height: 50px;
 		color: #24505F;
 	}
-	.BigBlank_err {
+	.CreateStartup_err {
 		color: rgba(207, 88, 88, 1);
 		margin-left: 20px;
 		margin-top: 10px;
@@ -30,9 +30,9 @@
 		font-size: 14px;
 		color: #345761;
 		max-height: 345px;
-		overflow-y: scroll;
+		overflow-x: scroll;
 
-		.BigBlank__field {
+		.CreateStartup__field {
 			padding: 10px;
 			width: 90%;
 			max-width: 92%;
@@ -51,7 +51,7 @@
 			color: #596467;
 		}
 	}
-	.BigBlank__button {
+	.CreateStartup__button {
 		cursor: pointer;
 		float: right;
 		margin: 10px 20px 20px 0;
@@ -65,11 +65,5 @@
 		font-weight: 500;
 		font-size: 15px;
 		color: #265D6E;
-	}
-}
-
-@media (max-width: 750px) {
-	.BigBlank {
-		// max-width: 581px;
 	}
 }
