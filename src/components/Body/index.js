@@ -12,16 +12,16 @@ import RegAuth from './RegAuth';
 import CreateStartup from './CreateStartup';
 import ChangeStartup from './ChangeStartup';
 
-function MainComp() {
+function MainComp(props) {
 	return (
 		<Fragment>
 			<MenuIcons />
 			<Switch>
 				<Route exact path="/" component={FindStartup} />
-				<Route path="/ShowStartup/:id" component={ShowStartup} />
+				<Route path="/ShowStartup/:id" render={ (propsLocal) => <ShowStartup login={props.login} {...propsLocal} />} />
 				<Route path="/RequestToStartup/:id" component={RequestToStartup} />
-				<Route path="/profile" component={Profile} />
-				<Route path="/mystartup/main" component={MyStartup} />
+				<Route path="/profile" render={(propsLocal) => <Profile login={props.login} updateUserInfo={props.updateUserInfo} {...propsLocal} />} />
+				<Route path="/mystartup/main" render={(propsLocal) => {return <MyStartup {...props} {...propsLocal} />}} />
 				<Route path="/mystartup/create" component={CreateStartup} />
 				<Route path="/mystartup/change" component={ChangeStartup} />
 			</Switch>
@@ -34,8 +34,8 @@ var Body = (props) => {
 		<div className="Body">
 			<div className="Container">
 				<Switch>
-					<Route path="/RegAuth" component={RegAuth} />
-					<Route path="/" component={MainComp} />
+					<Route path="/RegAuth" render={(propsLocal) => <RegAuth login={props.login} {...propsLocal} />} />
+					<Route path="/" render={(propsLocal) => <MainComp {...props} {...propsLocal} />} />
 				</Switch>
 			</div>
 		</div>
@@ -43,3 +43,4 @@ var Body = (props) => {
 }
 
 export default Body;
+

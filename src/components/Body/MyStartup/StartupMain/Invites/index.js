@@ -68,6 +68,13 @@ class Invites extends Component {
 		.then((response) => response.json())
 		.then((data) => {
 			var newInv = this.state.invites.filter(e => e.id != id);
+			if (answer) {
+				// delete this job from joblist
+				newInv = newInv.map(e => {
+					e.jobList = e.jobList.filter(elem => elem != job);
+					return e;
+				});
+			}
 			var newSC = this.state.selectChoose;
 			delete(newSC[id]);
 

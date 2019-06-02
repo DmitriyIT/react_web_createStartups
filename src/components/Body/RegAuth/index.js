@@ -99,7 +99,10 @@ class RegAuth extends Component {
 			// }
 			
 			if (data) {
-				// window.location.assign(this.state.linkHappyPath);
+				var { name, surName, photo, description } = data.userData;
+				var userData = { name, surName, photo, description };
+				this.props.login(userData);
+
 				this.setState({redirect: true});
 			} else {
 				this.setState({err: 'введен неверный email или пароль'});
@@ -133,7 +136,10 @@ class RegAuth extends Component {
 			
 			// console.log(data.code + ' userData.name: ' + data.userData.name);
 			if (data) {
-				// window.location.assign(this.state.linkHappyPath);
+				var { name, surName, photo, description } = data.userData;
+				var userData = { name, surName, photo, description };
+				this.props.login(userData);
+				
 				this.setState({redirect: true});
 			} else {
 				this.setState({err: 'ошибка сервера, приносим извинения'});

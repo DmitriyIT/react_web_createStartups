@@ -38,6 +38,8 @@
 	background: linear-gradient(156.19deg, #FFE99C 16.29%, #FFE486 115.92%, rgba(255, 164, 91, 0.8) 166.56%);
 }
 .StartupCard__body {
+	height: 71px;
+	overflow-y: scroll;
 	padding-left: 7px;
 	padding-top: 9px;
 	padding-right: 30px;

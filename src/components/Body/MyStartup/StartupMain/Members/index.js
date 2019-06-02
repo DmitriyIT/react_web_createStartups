@@ -9,7 +9,7 @@ class Members extends Component {
 		super(props);
 		this.state = {
 			members: [],
-			show_button: false
+			show_button: props.isAdmin
 		}
 	}
 
@@ -17,8 +17,7 @@ class Members extends Component {
 		fetch('/getMembers')
 			.then(response => response.json())
 			.then(data => this.setState({
-				members: data.members,
-				show_button: data.isAdmin
+				members: data.members.map(e => {e.show_popup = false; return e})
 			}));
 	}
 
@@ -71,7 +70,7 @@ class Members extends Component {
 					job={e.job} 
 					img_src={e.img_src} 
 					id={e.id} 
-					key={e.id} 
+					key={e.id}
 					show_button={this.state.show_button} 
 					click_showPopup={this.click_showPopup} 
 					show_popup={e.show_popup}

@@ -8,6 +8,7 @@ import RegAuth from '../RegAuth';
 class Profile extends Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			isAuth: false,
 			showEdit: false,
@@ -31,6 +32,15 @@ class Profile extends Component {
 					this.setState({
 						isAuth: true,
 						user_info: data.user_info
+					}, 
+					() => {
+						var userData = {
+							name: this.state.user_info.fname,
+							surName: this.state.user_info.sname,
+							photo: this.state.user_info.img_src,
+							description: this.state.user_info.aboute
+						}
+						this.props.updateUserInfo(userData);
 					});
 				}
 			})
@@ -126,7 +136,7 @@ class Profile extends Component {
 
 	changeEdit = (e) => {
 		this.getInfoProfile();
-		this.setState((prevState, props) => ({showEdit: !prevState.showEdit}))
+		this.setState((prevState, props) => ({showEdit: !prevState.showEdit}));
 	}
 	refInputFile = (e) => {this._refInputFile = e};
 	buttonInputFileClick = (e) => {this._refInputFile.click()}
@@ -148,6 +158,7 @@ class Profile extends Component {
 					clickEdit={this.changeEdit}
 					notifications={this.state.notifications} />
 			: <RegAuth 
+				login={this.props.login}
 				linkHappyPath='/profile'
 				comment='чтобы войти в профиль нужно зарегистрироваться' />;
 	}

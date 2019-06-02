@@ -14,6 +14,8 @@ class RequestToStartup extends Component {
 				{name: 'theme', text: "Тема стартапа", value: ''},
 				{name: 'authoe', text: "Контакты автора стартапа", value: ''}
 			],
+			jobList: ['нет указанных позиций'],
+			selectValue: 'нет указанных позиций',
 			showAuth: false
 		};
 	}
@@ -26,8 +28,12 @@ class RequestToStartup extends Component {
 				var fields_res = this.state.fields;
 				fields_res[0].value = data.theme;
 				fields_res[1].value = data.contacts;
-
-				this.setState({fields: fields_res});
+				
+				this.setState({
+					fields: fields_res,
+					jobList: data.peopleNeeded,
+					selectValue: data.peopleNeeded[0].position
+				});
 			})
 			.catch(res => console.log('catch: ' + res));
 	}
@@ -41,7 +47,10 @@ class RequestToStartup extends Component {
 		      'Content-Type': 'application/json'
 		    },
 		    method: "POST",
-		    body: JSON.stringify({idStartup: this.props.match.params.id})
+		    body: JSON.stringify({
+		    	idStartup: this.props.match.params.id,
+		    	possition: this.state.selectValue
+		    })
 		})
 		.then((response) => response.json())
 		.then((data) => { 
@@ -56,6 +65,11 @@ class RequestToStartup extends Component {
 		);
 	}
 
+	onSelectChange = (e) => {
+		this.setState({
+			selectValue: e.target.value
+		});
+	}
 
 	render() {
 		return (
@@ -65,6 +79,9 @@ class RequestToStartup extends Component {
 				submitForm={this.submitForm} 
 				title="Подача заявки" 
 				fields_input={this.state.fields} 
+				onSelectChange={this.onSelectChange}
+				selectValue={this.state.selectValue}
+				jobList={this.state.jobList}
 				button_text={this.state.button_text}
 				textareaChange={this.textareaChange} />
 		);

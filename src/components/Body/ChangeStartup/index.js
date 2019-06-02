@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './ChangeStartup.scss';
 
 import BigBlank from '../BigBlank';
@@ -15,7 +16,8 @@ class ChangeStartup extends Component {
 				{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)", value: ''},
 				{name: 'peopleNeeded', text: "Нужные люди", value: ''},
 				{name: 'contacts', text: "Ваши контакты (отображаются при подаче заявки в стартап: желающие смогут с вами связаться)", value: ''}
-			]
+			],
+			redirectToMain: false
 		};
 	}
 
@@ -65,16 +67,22 @@ class ChangeStartup extends Component {
 		// Valid on difference between start and write fields
 		if (!flag) {
 			start_fields.forEach( ({ name, value }) => {
+				console.log(`input_obj[${name}] = ${input_obj[name]} vs ${value} `);
 				if (input_obj[name] != value) flag_of_diff = true;
 			});
 		}
 
+		console.log('flag :' + flag + ' input_obj = ' + input_obj);
+		console.log(input_obj);
+		console.log('flagofDiff :' + flag_of_diff + ' start_fields: ');
+		console.log(start_fields);
 		// Valid of empty lines
 		if (flag) {
 			var err = 'поле \"' + flag + '\" не заполнено';
 			this.setState({err: err});
 		} else if (flag_of_diff) {
 			// Move changes startup
+			console.log('yes')
 			this.setState({err: '', button_text: 'Создается'});
 			this.ChangeStartup(input_obj);
 		}
@@ -93,8 +101,11 @@ class ChangeStartup extends Component {
 		.then((data) => { 
 			// Answer from serv actions
 			if (data.code) { // happy path
-				this.setState({err: ''});
-				window.location.assign('/mystartup/main');
+				this.setState({
+					err: '',
+					redirectToMain: true
+				});
+				// window.location.assign('/mystartup/main');
 			} else { // smth broke
 				this.setState({err: 'приносим извинения, произошла ошибка на сервере'});
 			}
@@ -103,6 +114,8 @@ class ChangeStartup extends Component {
 	}
 
 	render() {
+		if (this.state.redirectToMain) return <Redirect to='/mystartup/main' />;
+
 		return (
 			<BigBlank 
 				err={this.state.err} 

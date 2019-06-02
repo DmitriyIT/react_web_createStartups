@@ -10,6 +10,7 @@ class Chat extends Component {
 		super(props);
 
 		this.state = {
+			userData: props.userData,
 			text_msg: '',
 			messages: [],
 			idFMsg: 0,
@@ -94,7 +95,7 @@ class Chat extends Component {
 		clearInterval(this.interval);
 	}
 	componentWillUpdate() {
-		console.log(' will update ');
+		// console.log(' will update ');
 	}
 	
 
@@ -105,8 +106,8 @@ class Chat extends Component {
 
 		// Create msg_obj
 		var new_msg = {
-			author_icon_path: '../../img/icon/vasia.jpg',
-			author_name: 'Вася Васькин',
+			author_icon_path: this.state.userData.photo,
+			author_name: this.state.userData.name + ' ' + this.state.userData.surName,
 			time: Date.now(),
 			text: this.state.text_msg
 		};
@@ -132,11 +133,14 @@ class Chat extends Component {
 		      'Content-Type': 'application/json'
 		    },
 		    method: "POST",
-		    body: JSON.stringify(msg_obj)
+		    body: JSON.stringify({
+		    	time: msg_obj.time,
+		    	text: msg_obj.text
+		    })
 		})
 		.then((response) => response.json())
 		.then((data) => {
-			// console.log(data.ans);
+			this.setState({idLMsg: data.idLMsg})
 		})
 		.catch(function(res){ console.log('catch' + res) });
 	}

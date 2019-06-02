@@ -31,7 +31,14 @@ class ShowStartup extends Component {
 			.then(data => {
 				var fields_res = this.state.fields;
 				for (var i = 0; i < fields_res.length; i++) {
-					fields_res[i].value = data[fields_res[i].name];
+					
+					if (fields_res[i].name == 'peopleNeeded') {
+						fields_res[i].value = data[fields_res[i].name].map(e => {
+							return e.isFound ? `${e.possition} (найден)` : e.possition;
+						}).join(', ');
+					} else {
+						fields_res[i].value = data[fields_res[i].name];
+					}
 				}
 
 				this.setState({fields: fields_res});
@@ -67,6 +74,7 @@ class ShowStartup extends Component {
 
 		return this.state.showAuth ? 
 			<RegAuth 
+				login={this.props.login}
 				linkHappyPath={'/RequestToStartup/' + this.props.match.params.id}
 				comment='для подачи заявки нужно авторизоваться/зарегистрироваться' />
 			: <BigBlank

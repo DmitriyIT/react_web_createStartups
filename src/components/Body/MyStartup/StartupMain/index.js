@@ -17,7 +17,7 @@ class StartupMain extends Component {
 	}
 
 	componentDidMount(data) {
-		console.log(this.props);
+		// console.log(this.props);
 		this.setState({show_anim: true});
 	}
 	render() {
@@ -31,8 +31,12 @@ class StartupMain extends Component {
 				>
 					<div className="MyStartupBottom">
 						<Switch>
-							<Route exact path="/mystartup/main" component={Chat} />
-							<Route path="/mystartup/main/members" component={Members} />
+							<Route exact path="/mystartup/main"   render={(props) => { 
+								return <Chat {...props} userData={this.props.userData} /> 
+							}} />
+							<Route path="/mystartup/main/members" render={(propsLocal) => {
+								return <Members isAdmin={this.props.isAdmin} {...propsLocal} />
+							}} />
 							<Route path="/mystartup/main/invites" component={Invites} />
 						</Switch>
 					</div>

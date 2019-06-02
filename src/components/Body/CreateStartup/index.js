@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import './CreateStartup.scss';
 
 import BigBlank from '../BigBlank';
@@ -15,7 +16,8 @@ class CreateStartup extends Component {
 				{name: 'shortDescr', text: "Описание краткое (отображается при поиске на карточке)", value: ''}, 
 				{name: 'peopleNeeded', text: "Нужные люди", value: ''}, 
 				{name: 'contacts', text: "Ваши контакты (отображаются при подаче заявки в стартап: желающие смогут с вами связаться)", value: ''}
-			]
+			],
+			redirectToMain: false
 		}
 	}
 
@@ -64,8 +66,11 @@ class CreateStartup extends Component {
 		.then((data) => { 
 			// Answer from serv actions
 			if (data.code) {
-				this.setState({err: ''});
-				window.location.assign('/mystartup/main');
+				this.setState({
+					err: '',
+					redirectToMain: true
+				});
+				// window.location.assign('/mystartup/main');
 			} else { // error
 				this.setState({err: 'приносим извинения, произошла ошибка на сервере'});
 			}
@@ -74,6 +79,8 @@ class CreateStartup extends Component {
 	}
 
 	render() {
+		if (this.state.redirectToMain) return <Redirect to='/mystartup/main' />;
+
 		return (
 			<BigBlank 
 				err={this.state.err} 

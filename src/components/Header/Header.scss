@@ -25,6 +25,53 @@
 		color: #254E5B;
 	}
 }
+.Header__User_href {
+	display: inline-block;
+	float: right;
+	// padding-top: 6px;
+	width: 115px;
+	// margin-right: 10px;
+}
+.Header__User {
+	display: inline-block;
+	float: right;
+	padding-top: 6px;
+	width: 115px;
+	margin-right: 10px;
+
+	.Header__User__Img {
+		display: inline-block;
+		vertical-align: top;
+		height: 90%;
+		border-radius: 50%;
+		overflow: hidden;
+		img {
+			width: 30px;
+			vertical-align: middle;
+		}
+	}
+	.Header__User__rightBlock {
+		display: inline-block;
+		padding-left: 10px;
+		div {
+			width: 75px;
+			overflow-x: hidden;
+			color: #182b31;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			line-height: normal;
+		}
+		.Header__User__fName {
+		}
+		.Header__User__lName {
+		}
+	}
+}
+.Header__User_isReg-no {
+	.Header__User__rightBlock {
+		padding-top: 5px;
+	}
+}
 .Header__button_exit {
 	position: relative;
 	width: 28px;

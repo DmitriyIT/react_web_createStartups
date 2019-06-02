@@ -16,6 +16,12 @@ class MyStartup extends Component {
 		];
 		this.state = {
 			role: "no",//master||member||no
+			userData: {
+				name: props.name,
+				surName: props.surName,
+				photo: props.photo,
+				description: props.description
+			},
 			startup: {
 				title: 'name',
 				description: 'd',
@@ -45,7 +51,7 @@ class MyStartup extends Component {
 				<InfoCard title="Инф сообщ." color="grey" fields={this.fields1} button={false} funcButton='' />,
 				<InfoCard title="Инф сообщ." color="yellow" fields={this.fields2} button='Перейти к созданию' funcButton='' />
 			]
-			: <StartupMain {...this.state} />;
+			: <StartupMain {...this.state} isAdmin={this.state.role == "master"} />;
 		return (
 			<div className="MyStartup">
 				{ShowComp}

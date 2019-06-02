@@ -13,7 +13,7 @@ var Startup__popup = ({ author_img, author_name, need_people }) => {
 				<div className="popup__need">
 					<p>Нужны:</p>
 					<ul>
-						{need_people.map(item => (<li key={item.position}> {item.position} {item.isFound ? '(найден)' : ''} </li>))}
+						{need_people.map(item => (<li key={item.possition}> {item.possition} {item.isFound ? '(найден)' : ''} </li>))}
 					</ul>
 				</div>
 			</div>

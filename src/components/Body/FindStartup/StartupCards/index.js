@@ -10,7 +10,7 @@ var StartupCards = ({ startups }) => {
 		author_name: 'Вася Вася',
 		need_people: [
 			{
-				position: 'программист JS',
+				possition: 'программист JS',
 				isFound: true
 			}
 		]

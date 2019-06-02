@@ -8,12 +8,43 @@ import Body from './Body';
 
 
 class Join extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			userData: {
+				name:"",
+				surName:"No Auth",
+				photo:"../../img/icon/noname_user.png",
+				description:""
+			}
+		}
+	}
+	logout = () => {
+		fetch('/logout')
+			.then((res) => {
+				this.setState({
+					userData: {
+						name:"",
+						surName:"No Auth",
+						photo:"../../img/icon/noname_user.png",
+						description:""
+					}
+				})
+			});
+	}
+	login = (userData) => {
+		this.setState({userData: userData});
+	}
+	updateUserInfo = (userData) => {
+		this.setState({userData: userData})
+	}
+
 	render() {
 		return (
 			<BrowserRouter>
 				<Fragment>
-					<Header />
-					<Body />
+					<Header logout={this.logout} {...this.state.userData} />
+					<Body login={this.login} {...this.state.userData} updateUserInfo={this.updateUserInfo} />
 					<Footer />
 				</Fragment>
 			</BrowserRouter>

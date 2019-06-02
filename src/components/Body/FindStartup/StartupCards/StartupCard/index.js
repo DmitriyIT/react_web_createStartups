@@ -28,7 +28,7 @@ StartupCard.propTypes = {
 	more_info: PropTypes.object
 };
 StartupCard.defaultProps = {
-	title: "default title ')"
+	title: "default title"
 };
 
 export default StartupCard;
