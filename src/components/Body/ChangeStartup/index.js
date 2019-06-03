@@ -111,6 +111,10 @@ class ChangeStartup extends Component {
 					link: "/mystartup/main",
 					text: "отмена"
 				}}
+				button_left2={{
+					link: "/mystartup/exit/admin",
+					text: "удалить стартап"
+				}}
 				button_text={this.state.button_text}
 				submitForm={this.submitForm} 
 				textareaChange={this.textareaChange} />

@@ -7,11 +7,17 @@ import BigBlank from '../BigBlank';
 class ChangeStartup extends Component {
 	constructor(props) {
 		super(props);
+		var isAdmin = this.props.match.params.admin == 'admin' ;
+		
+		var textField = isAdmin ? 'Вы действиетльно хотите удалить стартап ? Все участники будут исключены.'
+			: 'Вы действиетльно хотите выйти из стартапа ?';
+		var buttonText = isAdmin ? 'Удалить стартап' : 'Выйти из стартапа';
+		
 		this.state = {
 			err: '',
-			button_text: 'Выйти из стартапа',
+			button_text: buttonText,
 			fields: [
-				{name: 'theme', text: "", value: 'Вы действиетльно хотите выйти из стартапа ?'}
+				{name: 'theme', text: "", value: textField}
 			],
 			redirectToMain: false
 		};
@@ -30,10 +36,11 @@ class ChangeStartup extends Component {
 	render() {
 		if (this.state.redirectToMain) return <Redirect to='/mystartup/main' />;
 
+		var isAdmin = this.props.match.params.admin == 'admin';
 		return (
 			<BigBlank 
 				err={this.state.err} 
-				title="Покинуть стартап"
+				title={isAdmin ? "Удаление стратапа" : "Покинуть стартап"}
 				fields_input={this.state.fields} 
 				button_left={{
 					link: "/mystartup/main",

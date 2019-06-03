@@ -22,7 +22,7 @@ var StartupMain_xml = ({ title, description, isAdmin }) => {
 				<div className="MyStartupTop__switchButton">Заявки</div>
 			</NavLink>
 
-			<Link to={isAdmin ? '/mystartup/change' : '/mystartup/exit'}>
+			<Link to={isAdmin ? '/mystartup/change' : '/mystartup/exit/user'}>
 				<div className="MyStartupTop__rightButton">{isAdmin ? 'Редактировать' : 'Покинуть стартап'}</div>
 			</Link>
 		</div>

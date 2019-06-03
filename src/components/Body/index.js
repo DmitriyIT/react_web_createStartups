@@ -25,7 +25,7 @@ function MainComp(props) {
 				<Route path="/mystartup/main"   render={(propsLocal) => <MyStartup {...props} {...propsLocal} />} />
 				<Route path="/mystartup/create" component={CreateStartup} />
 				<Route path="/mystartup/change" component={ChangeStartup} />
-				<Route path="/mystartup/exit"   component={ExitFromStartup} />
+				<Route path="/mystartup/exit/:admin" component={ExitFromStartup} />
 			</Switch>
 		</Fragment>
 	);
