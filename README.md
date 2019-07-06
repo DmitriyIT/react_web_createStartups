@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## For start:
+## For show:
 
-For proxy server use [this serv](https://github.com/DmitriyIT/express_for_createStartups)
+For show build use [this rep](https://github.com/DmitriyIT/app_prod_react/blob/master/app.js)
 
 ### `npm start`
