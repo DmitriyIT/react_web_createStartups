@@ -2,6 +2,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## For show:
 
-For show build use [this rep](https://github.com/DmitriyIT/app_prod_react/blob/master/app.js)
+For show build use [this rep](https://github.com/DmitriyIT/app_prod_react)
 
 ### `npm start`
