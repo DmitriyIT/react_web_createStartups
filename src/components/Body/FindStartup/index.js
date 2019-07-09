@@ -52,11 +52,8 @@ class FindStartup extends Component {
 		    body: JSON.stringify(data_sent)
 		})
 		.then((response) => response.json())
-		.then((data) => {
-			this.setState({ 
-				startups: data.startups,
-				isExistNextPage: data.isExistNextPage
-			})
+		.then(({ startups, isExistNextPage }) => {
+			this.setState({ startups, isExistNextPage });
 		});
 	}
 
@@ -72,14 +69,14 @@ class FindStartup extends Component {
 			return {
 				num_page: num
 			}
-		});	
+		});
 	}
 	moveNextPage = (e) => {
 		this.setState((prevState, props) => {
 			var num = ++prevState.num_page;
 			this.findStartups(this.state.search_str, num);
 			return {
-				num_page: num 
+				num_page: num
 			};
 		});
 	}
@@ -87,14 +84,14 @@ class FindStartup extends Component {
 	render() {
 		return (
 			<Fragment>
-				<SearchJoinLine 
+				<SearchJoinLine
 					search_str={this.state.search_str}
 					onChangeSearchStr={this.onChangeSearchStr}
-					findStartups={this.findStartups} 
+					findStartups={this.findStartups}
 					gumburgerClick={this.gumburgerClick} />
 				<LineOFConditions show={this.state.show_LineOFConditions} />
 				<StartupCards startups={this.state.startups} />
-				<MenuPagesBottom 
+				<MenuPagesBottom
 					isExistNextPage={this.state.isExistNextPage}
 					moveNextPage={this.moveNextPage}
 					moveBackPage={this.moveBackPage}

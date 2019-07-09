@@ -29,19 +29,19 @@ class ShowStartup extends Component {
 		fetch('/getInfoOfStartup/' + id)
 			.then(res => res.json())
 			.then(data => {
-				var fields_res = this.state.fields;
-				for (var i = 0; i < fields_res.length; i++) {
-					
-					if (fields_res[i].name == 'peopleNeeded') {
-						fields_res[i].value = data[fields_res[i].name].map(e => {
-							return e.isFound ? `${e.possition} (найден)` : e.possition;
-						}).join(', ');
-					} else {
-						fields_res[i].value = data[fields_res[i].name];
-					}
-				}
-
-				this.setState({fields: fields_res});
+				this.setState({
+                    fields: this.state.fields.map(({ name, text, value }) => {
+                        return {
+                            name,
+                            text,
+                            value: name === 'peopleNeeded' ?
+                                data[name].map(e => {
+                                    return e.possition + (e.isFound ? ' (найден)' : '');
+                                }).join(', ') :
+                                data[name]
+                        }
+                    })
+                });
 			})
 			.catch(res => console.log('catch: ' + res));
 	}
@@ -72,21 +72,21 @@ class ShowStartup extends Component {
 		var path = '/RequestToStartup/' + this.props.match.params.id;
 		if (this.state.redirect) return <Redirect to={path} />;
 
-		return this.state.showAuth ? 
-			<RegAuth 
+		return this.state.showAuth ?
+			<RegAuth
 				login={this.props.login}
 				linkHappyPath={'/RequestToStartup/' + this.props.match.params.id}
 				comment='для подачи заявки нужно авторизоваться/зарегистрироваться' />
 			: <BigBlank
-				err={this.state.err} 
-				title="Просмотр стартапа" 
-				fields_input={this.state.fields} 
+				err={this.state.err}
+				title="Просмотр стартапа"
+				fields_input={this.state.fields}
 				button_left={{
 					link: "/",
 					text: "отмена"
 				}}
 				button_text={this.state.button_text}
-				submitForm={this.submitForm} 
+				submitForm={this.submitForm}
 				textareaChange={this.textareaChange} />
 	}
 }

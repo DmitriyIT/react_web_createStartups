@@ -7,7 +7,7 @@ import StartupMain from './StartupMain';
 class MyStartup extends Component {
 	constructor(props) {
 		super(props);
-		
+
 		this.fields1 = [
 			"На этой странице будет отображаться стартап в котором вы состоите или который вы создали"
 		];
@@ -48,8 +48,8 @@ class MyStartup extends Component {
 
 	render() {
 		var ShowComp = this.state.role == 'no' ? [
-				<InfoCard title="Инф сообщ." color="grey" fields={this.fields1} button={false} funcButton='' />,
-				<InfoCard title="Инф сообщ." color="yellow" fields={this.fields2} button='Перейти к созданию' funcButton='' />
+				<InfoCard color="grey" fields={this.fields1} />,
+				<InfoCard color="yellow" fields={this.fields2} button='Перейти к созданию' />
 			]
 			: <StartupMain {...this.state} isAdmin={this.state.role == "master"} />;
 		return (
