@@ -6,13 +6,13 @@ import './InfoCard.scss';
  * fields: arr
  * button: 'name'/false
  */
-var InfoCard = ({ color, title, fields, button, funcButton }) => {
+var InfoCard = ({ color, title = 'Информационное сообщение', fields, button, funcButton }) => {
 
-	var text_fields = fields.map((text) => (<div className="InfoCard__text" key={text.substring(0,5)}> {text} </div>));	
-	var button_true = (button) ?  
+	var text_fields = fields.map((text) => (<div className="InfoCard__text" key={text.substring(0,5)}> {text} </div>));
+	var button_true = (button) ?
 		<Link to="/mystartup/create">
-			<div className="InfoCard__button"> {button} </div> 
-		</Link> 
+			<div className="InfoCard__button"> {button} </div>
+		</Link>
 		: '';
 	var InfoCard_classes = "InfoCard" + " InfoCard_color-" + color;
 
